@@ -254,18 +254,15 @@ public class BOPdfDocumentTemplate implements PdfTemplate<List<FileInputStream>>
             Graphics2D gf = bim.createGraphics();
             gf.drawImage(bim, 0, 0, null);
 
-            gf.drawImage(blurredTextLayer, 0, 0, null);
 
             DFFilter filter = new DFFilter();
             BufferedImage buffer = filter.filter(watermarkLayer, null);
-
-//            int w = buffer.getWidth();
-//            int h = buffer.getHeight();
 
             BufferedImage rotated = new BufferedImage(diagonal, diagonal, buffer.getType());
             Graphics2D graphic = rotated.createGraphics();
             graphic.rotate(Math.toRadians(-30), diagonal / 2f, diagonal / 2f);
             graphic.drawImage(buffer, null, 0, 0);
+            graphic.drawImage(blurredTextLayer, 0, 0, null);
             graphic.dispose();
 
             BufferedImage cropedRotated = rotated.getSubimage(diagonal / 2 - bim.getWidth() / 2, diagonal / 2 - bim.getHeight() / 2, diagonal / 2 + bim.getWidth() / 2, diagonal / 2 + bim.getHeight() / 2);
