@@ -6,7 +6,9 @@ import com.drew.metadata.Metadata;
 import com.drew.metadata.exif.ExifIFD0Directory;
 import com.jhlabs.image.RippleFilter;
 import com.jhlabs.image.RotateFilter;
+import com.jhlabs.image.SphereFilter;
 import com.jhlabs.image.TransformFilter;
+import com.jhlabs.image.TwirlFilter;
 import com.jhlabs.image.WaterFilter;
 import com.twelvemonkeys.image.ImageUtil;
 import fr.dossierfacile.api.pdfgenerator.model.FileInputStream;
@@ -229,11 +231,12 @@ public class BOPdfDocumentTemplate implements PdfTemplate<List<FileInputStream>>
             AffineTransform affineTransform = new AffineTransform();
             affineTransform.rotate(-Math.PI / 4f, 0, 0);
             Font rotatedFont = font.deriveFont(affineTransform);
-            g.setFont(rotatedFont);
+//            g.setFont(rotatedFont);
+            g.setFont(font);
 
             // allows to have small variation on the watermark position at each generation
             float spaceBetweenText = bim.getHeight() / ThreadLocalRandom.current().nextFloat(5f, 6f);
-            for (int i = 1; i < 10; i++) {
+            for (int i = 1; i < 20; i++) {
                 g.drawString(watermark, 0, i* spaceBetweenText);
             }
 
@@ -252,40 +255,26 @@ public class BOPdfDocumentTemplate implements PdfTemplate<List<FileInputStream>>
             Graphics2D gf = bim.createGraphics();
             gf.drawImage(bim, 0, 0, null);
 
-
             gf.drawImage(blurredTextLayer, 0, 0, null);
 
-//            RippleFilter filter = new RippleFilter();
-//            filter.setWaveType(RippleFilter.SINE);
-//            filter.setXAmplitude(2.6f);
-//            filter.setYAmplitude(1.7f);
-//            filter.setXWavelength(15);
-//            filter.setYWavelength(5);
-//
-//            filter.setEdgeAction(TransformFilter.BILINEAR);
-//
+            DFFilter filter = new DFFilter();
+            BufferedImage buffer1 = filter.filter(watermarkLayer, null);
+            gf.drawImage(buffer1, 0, 0, null);
+
+//            SphereFilter filter = new SphereFilter();
+//            filter.setCentreX(0.3f);
+//            filter.setCentreY(0.3f);
+//            filter.setRadius(500f);
+//            filter.setRefractionIndex(1.3f);
 //            BufferedImage buffer1 = filter.filter(watermarkLayer, null);
 //
-//            RotateFilter rotateFilter = new RotateFilter();
-//            rotateFilter.setAngle(45);
-//
-//            BufferedImage buffer2 = rotateFilter.filter(buffer1, null);
-//
-//
-//
+//            filter.setCentreX(0.75f);
+//            filter.setCentreY(0.75f);
+//            filter.setRadius(500f);
+//            filter.setRefractionIndex(1.3f);
+//            BufferedImage buffer2 = filter.filter(buffer1, null);
 //            gf.drawImage(buffer2, 0, 0, null);
 
-
-            WaterFilter waterFilter = new WaterFilter();
-//            waterFilter.setCentre(new Point2D.Float(bim.getWidth() / 2f, bim.getHeight() / 2f));
-            BufferedImage buffer = waterFilter.filter(watermarkLayer, null);
-
-            waterFilter.setCentre(new Point2D.Float(0,0));
-//            waterFilter.setRadius(10);
-//            waterFilter.setAmplitude();
-            buffer = waterFilter.filter(buffer, null);
-
-            gf.drawImage(buffer, 0, 0, null);
             gf.dispose();
 
             return bim;
