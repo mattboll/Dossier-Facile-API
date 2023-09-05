@@ -218,7 +218,10 @@ public class BOPdfDocumentTemplate implements PdfTemplate<List<FileInputStream>>
     public BufferedImage applyWatermark(BufferedImage bim, String watermarkText) {
         try {
             //Create a watermark layer
-            BufferedImage watermarkLayer = new BufferedImage(bim.getWidth(), bim.getHeight(), BufferedImage.TYPE_INT_ARGB);
+            int diagonal = (int) Math.sqrt(bim.getWidth() * bim.getWidth() + bim.getHeight() * bim.getHeight());
+
+            BufferedImage watermarkLayer = new BufferedImage(diagonal, diagonal, BufferedImage.TYPE_INT_ARGB);
+
             Graphics2D g = watermarkLayer.createGraphics();
 
             String watermark = watermarkText.repeat(1 + (128 / watermarkText.length()));
@@ -228,22 +231,18 @@ public class BOPdfDocumentTemplate implements PdfTemplate<List<FileInputStream>>
             g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
             Font font = new Font("Arial", Font.PLAIN, 28 * bim.getWidth() / params.maxPage.width);
-            AffineTransform affineTransform = new AffineTransform();
-            affineTransform.rotate(-Math.PI / 4f, 0, 0);
-            Font rotatedFont = font.deriveFont(affineTransform);
-//            g.setFont(rotatedFont);
             g.setFont(font);
 
             // allows to have small variation on the watermark position at each generation
-            float spaceBetweenText = bim.getHeight() / ThreadLocalRandom.current().nextFloat(5f, 6f);
-            for (int i = 1; i < 20; i++) {
-                g.drawString(watermark, 0, i* spaceBetweenText);
+            float spaceBetweenText = diagonal / ThreadLocalRandom.current().nextFloat(8f, 10f);
+            for (int i = 1; i < 11; i++) {
+                g.drawString(watermark, 0, i * spaceBetweenText);
             }
 
             // Create a gaussian blur layer
             int radius = ThreadLocalRandom.current().nextInt(45, 65);
 
-            BufferedImage blurredTextLayer = new BufferedImage(bim.getWidth(), bim.getHeight(), BufferedImage.TYPE_INT_ARGB);
+            BufferedImage blurredTextLayer = new BufferedImage(diagonal, diagonal, BufferedImage.TYPE_INT_ARGB);
             Graphics2D blurredTextLayerGraphics = blurredTextLayer.createGraphics();
             blurredTextLayerGraphics.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, ThreadLocalRandom.current().nextFloat(0.75f, 0.95f)));
             blurredTextLayerGraphics.drawImage(watermarkLayer, 0, 0, null);
@@ -258,22 +257,20 @@ public class BOPdfDocumentTemplate implements PdfTemplate<List<FileInputStream>>
             gf.drawImage(blurredTextLayer, 0, 0, null);
 
             DFFilter filter = new DFFilter();
-            BufferedImage buffer1 = filter.filter(watermarkLayer, null);
-            gf.drawImage(buffer1, 0, 0, null);
+            BufferedImage buffer = filter.filter(watermarkLayer, null);
 
-//            SphereFilter filter = new SphereFilter();
-//            filter.setCentreX(0.3f);
-//            filter.setCentreY(0.3f);
-//            filter.setRadius(500f);
-//            filter.setRefractionIndex(1.3f);
-//            BufferedImage buffer1 = filter.filter(watermarkLayer, null);
-//
-//            filter.setCentreX(0.75f);
-//            filter.setCentreY(0.75f);
-//            filter.setRadius(500f);
-//            filter.setRefractionIndex(1.3f);
-//            BufferedImage buffer2 = filter.filter(buffer1, null);
-//            gf.drawImage(buffer2, 0, 0, null);
+//            int w = buffer.getWidth();
+//            int h = buffer.getHeight();
+
+            BufferedImage rotated = new BufferedImage(diagonal, diagonal, buffer.getType());
+            Graphics2D graphic = rotated.createGraphics();
+            graphic.rotate(Math.toRadians(-30), diagonal / 2f, diagonal / 2f);
+            graphic.drawImage(buffer, null, 0, 0);
+            graphic.dispose();
+
+            BufferedImage cropedRotated = rotated.getSubimage(diagonal / 2 - bim.getWidth() / 2, diagonal / 2 - bim.getHeight() / 2, diagonal / 2 + bim.getWidth() / 2, diagonal / 2 + bim.getHeight() / 2);
+
+            gf.drawImage(cropedRotated, 0, 0, null);
 
             gf.dispose();
 
