@@ -230,12 +230,12 @@ public class BOPdfDocumentTemplate implements PdfTemplate<List<FileInputStream>>
             g.setColor(Color.DARK_GRAY);
             g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
-            Font font = new Font("Arial", Font.PLAIN, 28 * bim.getWidth() / params.maxPage.width);
+            Font font = new Font("Arial", Font.PLAIN, 40 * bim.getWidth() / params.maxPage.width);
             g.setFont(font);
 
             // allows to have small variation on the watermark position at each generation
             float spaceBetweenText = diagonal / ThreadLocalRandom.current().nextFloat(8f, 10f);
-            for (int i = 1; i < 11; i++) {
+            for (int i = 1; i < 13; i++) {
                 g.drawString(watermark, 0, i * spaceBetweenText);
             }
 
