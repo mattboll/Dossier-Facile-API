@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DiagnosticData xmlns="http://dss.esig.europa.eu/validation/diagnostic">
+    <DocumentName></DocumentName>
+    <ValidationDate>2022-08-29T15:12:43Z</ValidationDate>
+    <Signatures/>
+    <UsedCertificates/>
+    <UsedRevocations/>
+    <UsedTimestamps/>
+    <OriginalDocuments/>
+    <TrustedLists/>
+</DiagnosticData>

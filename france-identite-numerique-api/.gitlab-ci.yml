@@ -1,0 +1,39 @@
+variables:
+  LOT: lot4
+  SWAGGER_SERVER_URL: "https://developpement.forge.france-identite.fr/attestation-validator-api/api"
+  SWAGGER_SERVER_DESCRIPTION: "DEV - Attestation Validator"
+  CI_ORIGINAL_PROJECT_NAME: attestation-validator-api
+  CD_CHART_REPO: helm-${CI_ORIGINAL_PROJECT_NAME}
+  CD_GIT_REPOSITORY: https://${GITLAB_USER}:${GITLAB_PASSWORD}@gitlab.mim-libre.fr/idnum/sgin/prototype-franceconnect/helm-template/helm-${CI_ORIGINAL_PROJECT_NAME}.git
+  CD_BRANCH_NAME: partenaires
+
+include:
+  - project: $PATH_PROJECT_TEMPLATE_CI
+    file: $TEMPLATE_CI_SPRINGBOOT
+    ref: 'main'
+
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: never
+    - if: $CI_COMMIT_TAG
+      variables:
+        CD_BRANCH_NAME: partenaires
+        CD_COMMIT_DEPLOY: $CI_COMMIT_TAG-$CI_COMMIT_SHORT_SHA
+        IMAGE_CIBLE: "dev/fr/sgin/${LOT}/${CI_PROJECT_NAME}:${CD_COMMIT_DEPLOY}"
+        LIQUIBASE_IMAGE: "dev/fr/sgin/${LOT}/${CI_PROJECT_NAME}-liquibase:${CD_COMMIT_DEPLOY}"
+        HELM_TAG_PATH: ".image.application.tag"
+        HELM_LIQUIBASE_TAG_PATH: ".image.liquibase.tag"
+    - when: always
+
+
+deploy-dev:
+  stage: deploy
+  script:
+    - 'curl -k --request POST "${ARGOCD_API}/applications/${CI_ORIGINAL_PROJECT_NAME}/sync" --header "Authorization: Bearer ${ARGOCD_TOKEN}" --header "Content-Type: application/json" --data-raw "{ \"dryRun\": false,\"prune\": false,\"resources\": null,\"revision\": \"${CD_BRANCH_NAME}\",\"strategy\": {\"hook\": {\"force\": false}},\"hook\": {\"force\": false},\"force\": false,\"syncOptions\": null}"'
+
+deploy-recette:
+  stage: deploy
+  script:
+    - 'curl -k --request POST "${ARGOCD_API}/applications/${CI_ORIGINAL_PROJECT_NAME}/sync" --header "Authorization: Bearer ${ARGOCD_TOKEN}" --header "Content-Type: application/json" --data-raw "{ \"dryRun\": false,\"prune\": false,\"resources\": null,\"revision\": \"${CD_BRANCH_NAME}\",\"strategy\": {\"hook\": {\"force\": false}},\"hook\": {\"force\": false},\"force\": false,\"syncOptions\": null}"'
+

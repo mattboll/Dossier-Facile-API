@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DiagnosticData xmlns="http://dss.esig.europa.eu/validation/diagnostic">
+    <DocumentName></DocumentName>
+    <ValidationDate>2022-08-29T13:24:45Z</ValidationDate>
+    <Signatures>
+        <Signature Id="S-D5DD97512283508B77E50CCCAE9FBD28EBFD63401D60B7B78C73A7C571EAD0DE">
+            <SignatureFilename></SignatureFilename>
+            <ClaimedSigningTime>2022-08-09T10:07:38Z</ClaimedSigningTime>
+            <SignatureFormat>PAdES-BASELINE-T</SignatureFormat>
+            <StructuralValidation valid="true"/>
+            <DigestMatchers>
+                <DigestMatcher type="MESSAGE_DIGEST">
+                    <DigestMethod>SHA256</DigestMethod>
+                    <DigestValue>BAva5z1GKw/rAhzUsaN7/FlDUFneFhz3udsF2lVPvl8=</DigestValue>
+                    <DataFound>true</DataFound>
+                    <DataIntact>true</DataIntact>
+                </DigestMatcher>
+            </DigestMatchers>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>2048</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-F033E35D3CE8126A0AF7DAFE1C2301010DE0F8A5CC0C5F101C65D35FBF7AF7B3"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-F033E35D3CE8126A0AF7DAFE1C2301010DE0F8A5CC0C5F101C65D35FBF7AF7B3"/>
+                <ChainItem Certificate="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D"/>
+                <ChainItem Certificate="C-D48D3D23EEDB50A459E55197601C27774B9D7B18C94D5A059511A10250B93168"/>
+            </CertificateChain>
+            <ContentType>1.2.840.113549.1.7.1</ContentType>
+            <CommitmentTypeIndications>
+                <CommitmentTypeIndication>
+                    <Identifier>1.2.840.113549.1.9.16.6.1</Identifier>
+                </CommitmentTypeIndication>
+            </CommitmentTypeIndications>
+            <Policy>
+                <Id>1.2.250.1.152.202.1.1.1</Id>
+                <Url>https: //france-identite.gouv.fr/assets/files/France-identite-politique_signature.pdf</Url>
+                <Identified>true</Identified>
+                <Asn1Processable>false</Asn1Processable>
+                <ProcessingError>The errors found on signature policy validation are: at general: The policy digest value (tbudgBSg+bHWHiHnlteNzN8TUvI80ygS9IULh4rklEw=) does not match the re-calculated digest value (g+WFqRsz/eGDC9xGj8t9aaG3Ajjkuc4Lt/JxWs1o2XY=).</ProcessingError>
+                <DigestAlgoAndValue digestAlgorithmsEqual="true" match="false">
+                    <DigestMethod>SHA256</DigestMethod>
+                    <DigestValue>tbudgBSg+bHWHiHnlteNzN8TUvI80ygS9IULh4rklEw=</DigestValue>
+                </DigestAlgoAndValue>
+            </Policy>
+            <SignerInformationStore>
+                <SignerInfo Current="true">
+                    <IssuerName>CN=Certigna Entity CA, OID.2.5.4.97=NTRFR-48146308100036, OU=0002 48146308100036, O=DHIMYOTIS, C=FR</IssuerName>
+                    <SerialNumber>177587530701540918368422481520062558917</SerialNumber>
+                </SignerInfo>
+            </SignerInformationStore>
+            <PDFRevision>
+                <SignatureField name="cachetSGIN"/>
+                <PDFSignatureDictionary>
+                    <SignerName>FRANCE IDENTITE</SignerName>
+                    <Type>Sig</Type>
+                    <Filter>Adobe.PPKLite</Filter>
+                    <SubFilter>ETSI.CAdES.detached</SubFilter>
+                    <ContactInfo>contact@france-identite.gouv.fr</ContactInfo>
+                    <SignatureByteRange>0 172281 206111 73382</SignatureByteRange>
+                </PDFSignatureDictionary>
+            </PDFRevision>
+            <SignerDocumentRepresentations HashOnly="false" DocHashOnly="false"/>
+            <FoundCertificates>
+                <RelatedCertificate Certificate="C-F033E35D3CE8126A0AF7DAFE1C2301010DE0F8A5CC0C5F101C65D35FBF7AF7B3">
+                    <Origin>SIGNED_DATA</Origin>
+                    <CertificateRef>
+                        <Origin>SIGNING_CERTIFICATE</Origin>
+                        <IssuerSerial match="true">MIGUMH+kfTB7MQswCQYDVQQGEwJGUjESMBAGA1UECgwJREhJTVlPVElTMRwwGgYDVQQLDBMwMDAyIDQ4MTQ2MzA4MTAwMDM2MR0wGwYDVQRhDBROVFJGUi00ODE0NjMwODEwMDAzNjEbMBkGA1UEAwwSQ2VydGlnbmEgRW50aXR5IENBAhEAhZodQ5pYObMY+W9+lP7yxQ==</IssuerSerial>
+                        <DigestAlgoAndValue match="true">
+                            <DigestMethod>SHA256</DigestMethod>
+                            <DigestValue>8DPjXTzoEmoK99r+HCMBAQ3g+KXMDF8QHGXTX79697M=</DigestValue>
+                        </DigestAlgoAndValue>
+                    </CertificateRef>
+                </RelatedCertificate>
+            </FoundCertificates>
+            <FoundRevocations/>
+            <FoundTimestamps>
+                <FoundTimestamp Timestamp="T-E73A3CEFF1CDAFB4DA693071FAB74D07A91E85518D28D531D22ED1B6C65B087F"/>
+            </FoundTimestamps>
+            <SignatureScopes>
+                <SignatureScope SignerData="D-275B4E1DC3669EF36D99FEBEF58C080B8BF41B261BE5E673DA85EF391BC95029">
+                    <Scope>FULL</Scope>
+                    <Name>Full PDF</Name>
+                    <Description>The document ByteRange : [
+        0,
+        172281,
+        206111,
+        73382
+    ]</Description>
+                </SignatureScope>
+            </SignatureScopes>
+            <SignatureDigestReference>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>E+9U6fM9pMsMq+V/8/GrKAgwZyKd9UqJJVa0ujtjcOY=</DigestValue>
+            </SignatureDigestReference>
+            <DataToBeSignedRepresentation>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>8CRDFJ0s8DpagPl5bi33tnc7XLrlpI6Ni9OlR6m+Go8=</DigestValue>
+            </DataToBeSignedRepresentation>
+            <SignatureValue>jNxWXBGO3T68gMjDyInWDTLAJ5rErHE7i3N8izPlLdOlw7od87QUGqnMzJlKBh0hea1mPvGG04UIE5Gd2Tw+pcN2U1fHuKC8uIVQhYlgrlxNfvtqCpCq1yG+kO7eJs2F8AZ743l6S7bDLaSDl/4jPa9R1MfSvvSz4RiQeNmS0vbTRckBWcBhtP0/GhPneKwuwI+H6G3APGxKwldmpE8Jva5USdQ2otFsg0ehRLIqL8HUQh5pScWZe3tCfeUJjcMYbmpt68W/QZzVstnr/o0tgMPwoBDMzdJUCxeDQ4g33DL/uT1bAXEatp4UB6XeXfLsEXK34sjmMX/dA8I8hjl1nA==</SignatureValue>
+        </Signature>
+    </Signatures>
+    <UsedCertificates>
+        <Certificate Id="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D">
+            <SubjectDistinguishedName Format="CANONICAL">cn=certigna entity ca,
+    2.5.4.97=#0c144e545246522d3438313436333038313030303336,ou=0002 48146308100036,o=dhimyotis,c=fr</SubjectDistinguishedName>
+            <SubjectDistinguishedName Format="RFC2253">CN=Certigna Entity CA,
+    2.5.4.97=#0c144e545246522d3438313436333038313030303336,OU=0002 48146308100036,O=DHIMYOTIS,C=FR</SubjectDistinguishedName>
+            <IssuerDistinguishedName Format="CANONICAL">cn=certigna root ca,ou=0002 48146308100036,o=dhimyotis,c=fr</IssuerDistinguishedName>
+            <IssuerDistinguishedName Format="RFC2253">CN=Certigna Root CA,OU=0002 48146308100036,O=Dhimyotis,C=FR</IssuerDistinguishedName>
+            <SerialNumber>198429372998709978411380447595286256357</SerialNumber>
+            <CommonName>Certigna Entity CA</CommonName>
+            <CountryName>FR</CountryName>
+            <OrganizationIdentifier>NTRFR-48146308100036</OrganizationIdentifier>
+            <OrganizationName>DHIMYOTIS</OrganizationName>
+            <OrganizationalUnit>0002 48146308100036</OrganizationalUnit>
+            <AuthorityInformationAccessUrls>
+                <aiaUrl>http: //autorite.certigna.fr/certignarootca.der</aiaUrl>
+                <aiaUrl>http: //autorite.dhimyotis.com/certignarootca.der</aiaUrl>
+            </AuthorityInformationAccessUrls>
+            <CRLDistributionPoints>
+                <crlUrl>http: //crl.certigna.fr/certignarootca.crl</crlUrl>
+                <crlUrl>http: //crl.dhimyotis.com/certignarootca.crl</crlUrl>
+            </CRLDistributionPoints>
+            <OCSPAccessUrls/>
+            <Sources>
+                <Source>TRUSTED_LIST</Source>
+                <Source>OCSP_RESPONSE</Source>
+            </Sources>
+            <NotAfter>2033-06-03T10:27:54Z</NotAfter>
+            <NotBefore>2015-11-25T10:27:54Z</NotBefore>
+            <PublicKeySize>4096</PublicKeySize>
+            <PublicKeyEncryptionAlgo>RSA</PublicKeyEncryptionAlgo>
+            <EntityKey>PK-D048B2AEBFB0148A7526A4A1B57CCD0AD26DDB2514D3E8FF9839CBC24D7E0079</EntityKey>
+            <KeyUsageBits>
+                <KeyUsage>keyCertSign</KeyUsage>
+                <KeyUsage>crlSign</KeyUsage>
+            </KeyUsageBits>
+            <ExtendedKeyUsages/>
+            <IdPkixOcspNoCheck>false</IdPkixOcspNoCheck>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>4096</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-D48D3D23EEDB50A459E55197601C27774B9D7B18C94D5A059511A10250B93168"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-D48D3D23EEDB50A459E55197601C27774B9D7B18C94D5A059511A10250B93168"/>
+            </CertificateChain>
+            <Trusted>true</Trusted>
+            <SelfSigned>false</SelfSigned>
+            <CertificatePolicies>
+                <certificatePolicy cpsUrl="https://www.certigna.fr/autorites/">1.2.250.1.177.2.0.1.1</certificatePolicy>
+            </CertificatePolicies>
+            <TrustedServiceProviders>
+                <TrustedServiceProvider TL="TL-4E65C37A96DB77E5472DF7E247A845B41A5069EF4FD0819637BEF2B91839301F">
+                    <TSPNames>
+                        <TSPName lang="en">Certigna</TSPName>
+                        <TSPName lang="fr">Certigna</TSPName>
+                    </TSPNames>
+                    <TSPTradeNames>
+                        <TSPTradeName lang="en">DHIMYOTIS</TSPTradeName>
+                        <TSPTradeName lang="fr">Dhimyotis</TSPTradeName>
+                    </TSPTradeNames>
+                    <TSPRegistrationIdentifiers>
+                        <TSPRegistrationIdentifier>VATFR-85481463081</TSPRegistrationIdentifier>
+                    </TSPRegistrationIdentifiers>
+                    <TrustedServices>
+                        <TrustedService ServiceDigitalIdentifier="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2020-07-10T00:00:00Z</StartDate>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                        <TrustedService ServiceDigitalIdentifier="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de mails et de documents eIDAS - 1.2.250.1.177.2.6.1.41.1</ServiceName>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de jetons d'horodatage RGS**/ eIDAS - 1.2.250.1.177.2.6.1.6.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de mails et de documents eIDAS - 1.2.250.1.177.2.6.1.41.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de jetons d'horodatage RGS**/ eIDAS - 1.2.250.1.177.2.6.1.6.1</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2019-08-01T00:00:00Z</StartDate>
+                            <EndDate>2020-07-10T00:00:00Z</EndDate>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                        <TrustedService ServiceDigitalIdentifier="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2017-04-30T22:00:00Z</StartDate>
+                            <EndDate>2019-08-01T00:00:00Z</EndDate>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                        <TrustedService ServiceDigitalIdentifier="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2017-04-30T22:00:00Z</StartDate>
+                            <EndDate>2017-04-30T22:00:00Z</EndDate>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                    </TrustedServices>
+                </TrustedServiceProvider>
+            </TrustedServiceProviders>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>HMNYpt+gp2u1RwZg1487JfI8zWOVZn5JzPyCAdo9GS0=</DigestValue>
+            </DigestAlgoAndValue>
+        </Certificate>
+        <Certificate Id="C-25C6EB84D9EB27935DBFAB1A95CE6EB82A02130697CBD42EFBC4A47C087F64BB">
+            <SubjectDistinguishedName Format="CANONICAL">2.5.4.5=#130a54323134333631313836,cn=ministere de l interieur - horodatage-mi-07,ou=0002 11001401600015,
+    2.5.4.97=#0c144e545246522d3131303031343031363030303135,o=ministere de l interieur,c=fr</SubjectDistinguishedName>
+            <SubjectDistinguishedName Format="RFC2253">2.5.4.5=#130a54323134333631313836,CN=MINISTERE DE L INTERIEUR - HORODATAGE-MI-07,OU=0002 11001401600015,
+    2.5.4.97=#0c144e545246522d3131303031343031363030303135,O=MINISTERE DE L INTERIEUR,C=FR</SubjectDistinguishedName>
+            <IssuerDistinguishedName Format="CANONICAL">cn=certigna entity ca,
+    2.5.4.97=#0c144e545246522d3438313436333038313030303336,ou=0002 48146308100036,o=dhimyotis,c=fr</IssuerDistinguishedName>
+            <IssuerDistinguishedName Format="RFC2253">CN=Certigna Entity CA,
+    2.5.4.97=#0c144e545246522d3438313436333038313030303336,OU=0002 48146308100036,O=DHIMYOTIS,C=FR</IssuerDistinguishedName>
+            <SerialNumber>293100028812442306086676678657614439419</SerialNumber>
+            <SubjectSerialNumber>T214361186</SubjectSerialNumber>
+            <CommonName>MINISTERE DE L INTERIEUR - HORODATAGE-MI-07</CommonName>
+            <CountryName>FR</CountryName>
+            <OrganizationIdentifier>NTRFR-11001401600015</OrganizationIdentifier>
+            <OrganizationName>MINISTERE DE L INTERIEUR</OrganizationName>
+            <OrganizationalUnit>0002 11001401600015</OrganizationalUnit>
+            <AuthorityInformationAccessUrls>
+                <aiaUrl>http: //autorite.certigna.fr/entityca.der</aiaUrl>
+                <aiaUrl>http: //autorite.dhimyotis.com/entityca.der</aiaUrl>
+            </AuthorityInformationAccessUrls>
+            <CRLDistributionPoints>
+                <crlUrl>http: //crl.certigna.fr/entityca.crl</crlUrl>
+                <crlUrl>http: //crl.dhimyotis.com/entityca.crl</crlUrl>
+            </CRLDistributionPoints>
+            <OCSPAccessUrls>
+                <ocspServerUrl>http: //entityca.ocsp.certigna.fr</ocspServerUrl>
+                <ocspServerUrl>http: //entityca.ocsp.dhimyotis.com</ocspServerUrl>
+            </OCSPAccessUrls>
+            <Sources>
+                <Source>TIMESTAMP</Source>
+                <Source>TRUSTED_LIST</Source>
+            </Sources>
+            <NotAfter>2024-10-05T21:59:59Z</NotAfter>
+            <NotBefore>2021-10-06T22:00:00Z</NotBefore>
+            <PublicKeySize>2048</PublicKeySize>
+            <PublicKeyEncryptionAlgo>RSA</PublicKeyEncryptionAlgo>
+            <EntityKey>PK-4ED8BDE31490B4122A700E9A11C777ABAD6FB05639B9E6C5027294DDC4A56CE2</EntityKey>
+            <KeyUsageBits>
+                <KeyUsage>digitalSignature</KeyUsage>
+                <KeyUsage>nonRepudiation</KeyUsage>
+            </KeyUsageBits>
+            <ExtendedKeyUsages>
+                <extendedKeyUsagesOid Description="timeStamping">1.3.6.1.5.5.7.3.8</extendedKeyUsagesOid>
+            </ExtendedKeyUsages>
+            <IdPkixOcspNoCheck>false</IdPkixOcspNoCheck>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>4096</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D"/>
+                <ChainItem Certificate="C-D48D3D23EEDB50A459E55197601C27774B9D7B18C94D5A059511A10250B93168"/>
+            </CertificateChain>
+            <Trusted>true</Trusted>
+            <SelfSigned>false</SelfSigned>
+            <CertificatePolicies>
+                <certificatePolicy cpsUrl="https://www.certigna.com/autorite-certification">1.2.250.1.177.2.6.1.3.1</certificatePolicy>
+            </CertificatePolicies>
+            <TrustedServiceProviders>
+                <TrustedServiceProvider TL="TL-4E65C37A96DB77E5472DF7E247A845B41A5069EF4FD0819637BEF2B91839301F">
+                    <TSPNames>
+                        <TSPName lang="en">Certigna</TSPName>
+                        <TSPName lang="fr">Certigna</TSPName>
+                    </TSPNames>
+                    <TSPTradeNames>
+                        <TSPTradeName lang="en">DHIMYOTIS</TSPTradeName>
+                        <TSPTradeName lang="fr">Dhimyotis</TSPTradeName>
+                    </TSPTradeNames>
+                    <TSPRegistrationIdentifiers>
+                        <TSPRegistrationIdentifier>VATFR-85481463081</TSPRegistrationIdentifier>
+                    </TSPRegistrationIdentifiers>
+                    <TrustedServices>
+                        <TrustedService ServiceDigitalIdentifier="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2020-07-10T00:00:00Z</StartDate>
+                            <CapturedQualifiers/>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                    </TrustedServices>
+                </TrustedServiceProvider>
+                <TrustedServiceProvider TL="TL-4E65C37A96DB77E5472DF7E247A845B41A5069EF4FD0819637BEF2B91839301F">
+                    <TSPNames>
+                        <TSPName lang="en">Ministère de l'Intérieur</TSPName>
+                        <TSPName lang="fr">Ministère de l'Intérieur</TSPName>
+                    </TSPNames>
+                    <TSPTradeNames>
+                        <TSPTradeName lang="en">MINISTERE DE L INTERIEUR</TSPTradeName>
+                        <TSPTradeName lang="en">MINISTERE INTERIEUR</TSPTradeName>
+                    </TSPTradeNames>
+                    <TSPRegistrationIdentifiers>
+                        <TSPRegistrationIdentifier>VATFR-45110014016</TSPRegistrationIdentifier>
+                    </TSPRegistrationIdentifiers>
+                    <TrustedServices>
+                        <TrustedService ServiceDigitalIdentifier="C-25C6EB84D9EB27935DBFAB1A95CE6EB82A02130697CBD42EFBC4A47C087F64BB">
+                            <ServiceNames>
+                                <ServiceName lang="en">Horodatage du Ministère de l'Intérieur - MI-07</ServiceName>
+                                <ServiceName lang="fr">Horodatage du Ministère de l'Intérieur - MI-07</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/TSA/QTST</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2021-11-23T01:00:00Z</StartDate>
+                            <CapturedQualifiers/>
+                            <AdditionalServiceInfoUris/>
+                        </TrustedService>
+                    </TrustedServices>
+                </TrustedServiceProvider>
+            </TrustedServiceProviders>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>JcbrhNnrJ5Ndv6salc5uuCoCEwaXy9Qu+8SkfAh/ZLs=</DigestValue>
+            </DigestAlgoAndValue>
+        </Certificate>
+        <Certificate Id="C-8EA95C9511F084481CBDC1CF11103BD115F960E1B15296DE05C3E09BC712AE23">
+            <SubjectDistinguishedName Format="CANONICAL">cn=ocsp certigna entity ca,ou=0002 48146308100036,o=dhimyotis,c=fr</SubjectDistinguishedName>
+            <SubjectDistinguishedName Format="RFC2253">CN=OCSP Certigna Entity CA,OU=0002 48146308100036,O=DHIMYOTIS,C=FR</SubjectDistinguishedName>
+            <IssuerDistinguishedName Format="CANONICAL">cn=certigna entity ca,
+    2.5.4.97=#0c144e545246522d3438313436333038313030303336,ou=0002 48146308100036,o=dhimyotis,c=fr</IssuerDistinguishedName>
+            <IssuerDistinguishedName Format="RFC2253">CN=Certigna Entity CA,
+    2.5.4.97=#0c144e545246522d3438313436333038313030303336,OU=0002 48146308100036,O=DHIMYOTIS,C=FR</IssuerDistinguishedName>
+            <SerialNumber>169849346076802028530951668760811501296</SerialNumber>
+            <CommonName>OCSP Certigna Entity CA</CommonName>
+            <CountryName>FR</CountryName>
+            <OrganizationName>DHIMYOTIS</OrganizationName>
+            <OrganizationalUnit>0002 48146308100036</OrganizationalUnit>
+            <AuthorityInformationAccessUrls>
+                <aiaUrl>http: //autorite.certigna.fr/entityca.der</aiaUrl>
+                <aiaUrl>http: //autorite.dhimyotis.com/entityca.der</aiaUrl>
+            </AuthorityInformationAccessUrls>
+            <CRLDistributionPoints>
+                <crlUrl>http: //crl.certigna.fr/entityca.crl</crlUrl>
+                <crlUrl>http: //crl.dhimyotis.com/entityca.crl</crlUrl>
+            </CRLDistributionPoints>
+            <OCSPAccessUrls>
+                <ocspServerUrl>http: //entityca.ocsp.certigna.fr</ocspServerUrl>
+                <ocspServerUrl>http: //entityca.ocsp.dhimyotis.com</ocspServerUrl>
+            </OCSPAccessUrls>
+            <Sources>
+                <Source>OCSP_RESPONSE</Source>
+            </Sources>
+            <NotAfter>2022-10-21T15:10:29Z</NotAfter>
+            <NotBefore>2019-10-22T15:10:29Z</NotBefore>
+            <PublicKeySize>2048</PublicKeySize>
+            <PublicKeyEncryptionAlgo>RSA</PublicKeyEncryptionAlgo>
+            <EntityKey>PK-9310AB29192BD5E84D7C4C7069D27B9573A2AD9702BF01DA849E6B99106671FD</EntityKey>
+            <KeyUsageBits>
+                <KeyUsage>digitalSignature</KeyUsage>
+                <KeyUsage>nonRepudiation</KeyUsage>
+            </KeyUsageBits>
+            <ExtendedKeyUsages>
+                <extendedKeyUsagesOid Description="ocspSigning">1.3.6.1.5.5.7.3.9</extendedKeyUsagesOid>
+            </ExtendedKeyUsages>
+            <IdPkixOcspNoCheck>true</IdPkixOcspNoCheck>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>4096</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-EBBF4DC600C17DA04381DEFDCFC119C3F34EFB4A04D0860910B813C7792D7585"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-EBBF4DC600C17DA04381DEFDCFC119C3F34EFB4A04D0860910B813C7792D7585"/>
+                <ChainItem Certificate="C-E3B6A2DB2ED7CE48842F7AC53241C7B71D54144BFB40C11F3F1D0B42F5EEA12D"/>
+            </CertificateChain>
+            <Trusted>false</Trusted>
+            <SelfSigned>false</SelfSigned>
+            <CertificatePolicies/>
+            <TrustedServiceProviders>
+                <TrustedServiceProvider TL="TL-4E65C37A96DB77E5472DF7E247A845B41A5069EF4FD0819637BEF2B91839301F">
+                    <TSPNames>
+                        <TSPName lang="en">Certigna</TSPName>
+                        <TSPName lang="fr">Certigna</TSPName>
+                    </TSPNames>
+                    <TSPTradeNames>
+                        <TSPTradeName lang="en">DHIMYOTIS</TSPTradeName>
+                        <TSPTradeName lang="fr">Dhimyotis</TSPTradeName>
+                    </TSPTradeNames>
+                    <TSPRegistrationIdentifiers>
+                        <TSPRegistrationIdentifier>VATFR-85481463081</TSPRegistrationIdentifier>
+                    </TSPRegistrationIdentifiers>
+                    <TrustedServices>
+                        <TrustedService ServiceDigitalIdentifier="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2020-07-10T00:00:00Z</StartDate>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                        <TrustedService ServiceDigitalIdentifier="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de mails et de documents eIDAS - 1.2.250.1.177.2.6.1.41.1</ServiceName>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de jetons d'horodatage RGS**/ eIDAS - 1.2.250.1.177.2.6.1.6.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de mails et de documents eIDAS - 1.2.250.1.177.2.6.1.41.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de jetons d'horodatage RGS**/ eIDAS - 1.2.250.1.177.2.6.1.6.1</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2019-08-01T00:00:00Z</StartDate>
+                            <EndDate>2020-07-10T00:00:00Z</EndDate>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                    </TrustedServices>
+                </TrustedServiceProvider>
+            </TrustedServiceProviders>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>jqlclRHwhEgcvcHPERA70RX5YOGxUpbeBcPgm8cSriM=</DigestValue>
+            </DigestAlgoAndValue>
+        </Certificate>
+        <Certificate Id="C-D48D3D23EEDB50A459E55197601C27774B9D7B18C94D5A059511A10250B93168">
+            <SubjectDistinguishedName Format="CANONICAL">cn=certigna root ca,ou=0002 48146308100036,o=dhimyotis,c=fr</SubjectDistinguishedName>
+            <SubjectDistinguishedName Format="RFC2253">CN=Certigna Root CA,OU=0002 48146308100036,O=Dhimyotis,C=FR</SubjectDistinguishedName>
+            <IssuerDistinguishedName Format="CANONICAL">cn=certigna root ca,ou=0002 48146308100036,o=dhimyotis,c=fr</IssuerDistinguishedName>
+            <IssuerDistinguishedName Format="RFC2253">CN=Certigna Root CA,OU=0002 48146308100036,O=Dhimyotis,C=FR</IssuerDistinguishedName>
+            <SerialNumber>269714418870597844693661054334862075617</SerialNumber>
+            <CommonName>Certigna Root CA</CommonName>
+            <CountryName>FR</CountryName>
+            <OrganizationName>Dhimyotis</OrganizationName>
+            <OrganizationalUnit>0002 48146308100036</OrganizationalUnit>
+            <AuthorityInformationAccessUrls/>
+            <CRLDistributionPoints>
+                <crlUrl>http: //crl.certigna.fr/certignarootca.crl</crlUrl>
+                <crlUrl>http: //crl.dhimyotis.com/certignarootca.crl</crlUrl>
+            </CRLDistributionPoints>
+            <OCSPAccessUrls/>
+            <Sources>
+                <Source>AIA</Source>
+            </Sources>
+            <NotAfter>2033-10-01T08:32:27Z</NotAfter>
+            <NotBefore>2013-10-01T08:32:27Z</NotBefore>
+            <PublicKeySize>4096</PublicKeySize>
+            <PublicKeyEncryptionAlgo>RSA</PublicKeyEncryptionAlgo>
+            <EntityKey>PK-8E8046EC4CAC015A507CE0D2D0154A4B40E8E42B3165CFA546571435112D17E5</EntityKey>
+            <KeyUsageBits>
+                <KeyUsage>keyCertSign</KeyUsage>
+                <KeyUsage>crlSign</KeyUsage>
+            </KeyUsageBits>
+            <ExtendedKeyUsages/>
+            <IdPkixOcspNoCheck>false</IdPkixOcspNoCheck>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>4096</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <CertificateChain/>
+            <Trusted>false</Trusted>
+            <SelfSigned>true</SelfSigned>
+            <CertificatePolicies>
+                <certificatePolicy cpsUrl="https://wwww.certigna.fr/autorites/">2.5.29.32.0</certificatePolicy>
+            </CertificatePolicies>
+            <TrustedServiceProviders/>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>1I09I+7bUKRZ5VGXYBwnd0udexjJTVoFlRGhAlC5MWg=</DigestValue>
+            </DigestAlgoAndValue>
+        </Certificate>
+        <Certificate Id="C-E3B6A2DB2ED7CE48842F7AC53241C7B71D54144BFB40C11F3F1D0B42F5EEA12D">
+            <SubjectDistinguishedName Format="CANONICAL">cn=certigna,o=dhimyotis,c=fr</SubjectDistinguishedName>
+            <SubjectDistinguishedName Format="RFC2253">CN=Certigna,O=Dhimyotis,C=FR</SubjectDistinguishedName>
+            <IssuerDistinguishedName Format="CANONICAL">cn=certigna,o=dhimyotis,c=fr</IssuerDistinguishedName>
+            <IssuerDistinguishedName Format="RFC2253">CN=Certigna,O=Dhimyotis,C=FR</IssuerDistinguishedName>
+            <SerialNumber>18364802974209362175</SerialNumber>
+            <CommonName>Certigna</CommonName>
+            <CountryName>FR</CountryName>
+            <OrganizationName>Dhimyotis</OrganizationName>
+            <AuthorityInformationAccessUrls/>
+            <CRLDistributionPoints/>
+            <OCSPAccessUrls/>
+            <Sources>
+                <Source>OCSP_RESPONSE</Source>
+            </Sources>
+            <NotAfter>2027-06-29T15:13:05Z</NotAfter>
+            <NotBefore>2007-06-29T15:13:05Z</NotBefore>
+            <PublicKeySize>2048</PublicKeySize>
+            <PublicKeyEncryptionAlgo>RSA</PublicKeyEncryptionAlgo>
+            <EntityKey>PK-510D20E5C47F63CF666B20F61AF62BC099A42AC824FFA443A2DA7C90B1808A91</EntityKey>
+            <KeyUsageBits>
+                <KeyUsage>keyCertSign</KeyUsage>
+                <KeyUsage>crlSign</KeyUsage>
+            </KeyUsageBits>
+            <ExtendedKeyUsages/>
+            <IdPkixOcspNoCheck>false</IdPkixOcspNoCheck>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>2048</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA1</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <CertificateChain/>
+            <Trusted>false</Trusted>
+            <SelfSigned>true</SelfSigned>
+            <CertificatePolicies/>
+            <TrustedServiceProviders/>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>47ai2y7XzkiEL3rFMkHHtx1UFEv7QMEfPx0LQvXuoS0=</DigestValue>
+            </DigestAlgoAndValue>
+        </Certificate>
+        <Certificate Id="C-EBBF4DC600C17DA04381DEFDCFC119C3F34EFB4A04D0860910B813C7792D7585">
+            <SubjectDistinguishedName Format="CANONICAL">cn=certigna entity ca,
+    2.5.4.97=#0c144e545246522d3438313436333038313030303336,ou=0002 48146308100036,o=dhimyotis,c=fr</SubjectDistinguishedName>
+            <SubjectDistinguishedName Format="RFC2253">CN=Certigna Entity CA,
+    2.5.4.97=#0c144e545246522d3438313436333038313030303336,OU=0002 48146308100036,O=DHIMYOTIS,C=FR</SubjectDistinguishedName>
+            <IssuerDistinguishedName Format="CANONICAL">cn=certigna,o=dhimyotis,c=fr</IssuerDistinguishedName>
+            <IssuerDistinguishedName Format="RFC2253">CN=Certigna,O=Dhimyotis,C=FR</IssuerDistinguishedName>
+            <SerialNumber>331390735146257245090881749240634956198</SerialNumber>
+            <CommonName>Certigna Entity CA</CommonName>
+            <CountryName>FR</CountryName>
+            <OrganizationIdentifier>NTRFR-48146308100036</OrganizationIdentifier>
+            <OrganizationName>DHIMYOTIS</OrganizationName>
+            <OrganizationalUnit>0002 48146308100036</OrganizationalUnit>
+            <AuthorityInformationAccessUrls>
+                <aiaUrl>http: //autorite.certigna.fr/certigna.der</aiaUrl>
+                <aiaUrl>http: //autorite.dhimyotis.com/certigna.der</aiaUrl>
+            </AuthorityInformationAccessUrls>
+            <CRLDistributionPoints>
+                <crlUrl>http: //crl.certigna.fr/certigna.crl</crlUrl>
+                <crlUrl>http: //crl.dhimyotis.com/certigna.crl</crlUrl>
+            </CRLDistributionPoints>
+            <OCSPAccessUrls/>
+            <Sources>
+                <Source>TRUSTED_LIST</Source>
+                <Source>OCSP_RESPONSE</Source>
+            </Sources>
+            <NotAfter>2025-11-22T10:24:07Z</NotAfter>
+            <NotBefore>2015-11-25T10:24:07Z</NotBefore>
+            <PublicKeySize>4096</PublicKeySize>
+            <PublicKeyEncryptionAlgo>RSA</PublicKeyEncryptionAlgo>
+            <EntityKey>PK-D048B2AEBFB0148A7526A4A1B57CCD0AD26DDB2514D3E8FF9839CBC24D7E0079</EntityKey>
+            <KeyUsageBits>
+                <KeyUsage>keyCertSign</KeyUsage>
+                <KeyUsage>crlSign</KeyUsage>
+            </KeyUsageBits>
+            <ExtendedKeyUsages/>
+            <IdPkixOcspNoCheck>false</IdPkixOcspNoCheck>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>2048</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-E3B6A2DB2ED7CE48842F7AC53241C7B71D54144BFB40C11F3F1D0B42F5EEA12D"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-E3B6A2DB2ED7CE48842F7AC53241C7B71D54144BFB40C11F3F1D0B42F5EEA12D"/>
+            </CertificateChain>
+            <Trusted>true</Trusted>
+            <SelfSigned>false</SelfSigned>
+            <CertificatePolicies>
+                <certificatePolicy cpsUrl="https://www.certigna.fr/autorites/">1.2.250.1.177.1.0.1.2</certificatePolicy>
+            </CertificatePolicies>
+            <TrustedServiceProviders>
+                <TrustedServiceProvider TL="TL-4E65C37A96DB77E5472DF7E247A845B41A5069EF4FD0819637BEF2B91839301F">
+                    <TSPNames>
+                        <TSPName lang="en">Certigna</TSPName>
+                        <TSPName lang="fr">Certigna</TSPName>
+                    </TSPNames>
+                    <TSPTradeNames>
+                        <TSPTradeName lang="en">DHIMYOTIS</TSPTradeName>
+                        <TSPTradeName lang="fr">Dhimyotis</TSPTradeName>
+                    </TSPTradeNames>
+                    <TSPRegistrationIdentifiers>
+                        <TSPRegistrationIdentifier>VATFR-85481463081</TSPRegistrationIdentifier>
+                    </TSPRegistrationIdentifiers>
+                    <TrustedServices>
+                        <TrustedService ServiceDigitalIdentifier="C-EBBF4DC600C17DA04381DEFDCFC119C3F34EFB4A04D0860910B813C7792D7585">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2020-07-10T00:00:00Z</StartDate>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                        <TrustedService ServiceDigitalIdentifier="C-EBBF4DC600C17DA04381DEFDCFC119C3F34EFB4A04D0860910B813C7792D7585">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de mails et de documents eIDAS - 1.2.250.1.177.2.6.1.41.1</ServiceName>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de jetons d'horodatage RGS**/ eIDAS - 1.2.250.1.177.2.6.1.6.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de mails et de documents eIDAS - 1.2.250.1.177.2.6.1.41.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de jetons d'horodatage RGS**/ eIDAS - 1.2.250.1.177.2.6.1.6.1</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2019-08-01T00:00:00Z</StartDate>
+                            <EndDate>2020-07-10T00:00:00Z</EndDate>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                        <TrustedService ServiceDigitalIdentifier="C-EBBF4DC600C17DA04381DEFDCFC119C3F34EFB4A04D0860910B813C7792D7585">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2017-04-30T22:00:00Z</StartDate>
+                            <EndDate>2019-08-01T00:00:00Z</EndDate>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                        <TrustedService ServiceDigitalIdentifier="C-EBBF4DC600C17DA04381DEFDCFC119C3F34EFB4A04D0860910B813C7792D7585">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2017-04-30T22:00:00Z</StartDate>
+                            <EndDate>2017-04-30T22:00:00Z</EndDate>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                    </TrustedServices>
+                </TrustedServiceProvider>
+            </TrustedServiceProviders>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>679NxgDBfaBDgd79z8EZw/NO+0oE0IYJELgTx3ktdYU=</DigestValue>
+            </DigestAlgoAndValue>
+        </Certificate>
+        <Certificate Id="C-F033E35D3CE8126A0AF7DAFE1C2301010DE0F8A5CC0C5F101C65D35FBF7AF7B3">
+            <SubjectDistinguishedName Format="CANONICAL">2.5.4.5=#1309533135363237303031,cn=ministere de l interieur - signature_dxs02_mi,ou=0002 11001401600015,
+    2.5.4.97=#0c144e545246522d3131303031343031363030303135,o=ministere de l interieur,c=fr</SubjectDistinguishedName>
+            <SubjectDistinguishedName Format="RFC2253">2.5.4.5=#1309533135363237303031,CN=MINISTERE DE L INTERIEUR - signature_dxs02_mi,OU=0002 11001401600015,
+    2.5.4.97=#0c144e545246522d3131303031343031363030303135,O=MINISTERE DE L INTERIEUR,C=FR</SubjectDistinguishedName>
+            <IssuerDistinguishedName Format="CANONICAL">cn=certigna entity ca,
+    2.5.4.97=#0c144e545246522d3438313436333038313030303336,ou=0002 48146308100036,o=dhimyotis,c=fr</IssuerDistinguishedName>
+            <IssuerDistinguishedName Format="RFC2253">CN=Certigna Entity CA,
+    2.5.4.97=#0c144e545246522d3438313436333038313030303336,OU=0002 48146308100036,O=DHIMYOTIS,C=FR</IssuerDistinguishedName>
+            <SerialNumber>177587530701540918368422481520062558917</SerialNumber>
+            <SubjectSerialNumber>S15627001</SubjectSerialNumber>
+            <CommonName>MINISTERE DE L INTERIEUR - signature_dxs02_mi</CommonName>
+            <CountryName>FR</CountryName>
+            <OrganizationIdentifier>NTRFR-11001401600015</OrganizationIdentifier>
+            <OrganizationName>MINISTERE DE L INTERIEUR</OrganizationName>
+            <OrganizationalUnit>0002 11001401600015</OrganizationalUnit>
+            <SubjectAlternativeNames>
+                <subjectAlternativeName>shfd-fssi@interieur.gouv.fr</subjectAlternativeName>
+            </SubjectAlternativeNames>
+            <AuthorityInformationAccessUrls>
+                <aiaUrl>http: //autorite.certigna.fr/entityca.der</aiaUrl>
+                <aiaUrl>http: //autorite.dhimyotis.com/entityca.der</aiaUrl>
+            </AuthorityInformationAccessUrls>
+            <CRLDistributionPoints>
+                <crlUrl>http: //crl.certigna.fr/entityca.crl</crlUrl>
+                <crlUrl>http: //crl.dhimyotis.com/entityca.crl</crlUrl>
+            </CRLDistributionPoints>
+            <OCSPAccessUrls>
+                <ocspServerUrl>http: //entityca.ocsp.certigna.fr</ocspServerUrl>
+                <ocspServerUrl>http: //entityca.ocsp.dhimyotis.com</ocspServerUrl>
+            </OCSPAccessUrls>
+            <Sources>
+                <Source>SIGNATURE</Source>
+            </Sources>
+            <NotAfter>2023-03-18T10:53:49Z</NotAfter>
+            <NotBefore>2020-03-18T10:53:49Z</NotBefore>
+            <PublicKeySize>2048</PublicKeySize>
+            <PublicKeyEncryptionAlgo>RSA</PublicKeyEncryptionAlgo>
+            <EntityKey>PK-FF46B0EA81297FA996396BDCB4CDA2E1834DE1E5FDB3369FB5230240721500FB</EntityKey>
+            <KeyUsageBits>
+                <KeyUsage>digitalSignature</KeyUsage>
+                <KeyUsage>nonRepudiation</KeyUsage>
+            </KeyUsageBits>
+            <ExtendedKeyUsages>
+                <extendedKeyUsagesOid Description="emailProtection">1.3.6.1.5.5.7.3.4</extendedKeyUsagesOid>
+            </ExtendedKeyUsages>
+            <IdPkixOcspNoCheck>false</IdPkixOcspNoCheck>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>4096</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D"/>
+                <ChainItem Certificate="C-D48D3D23EEDB50A459E55197601C27774B9D7B18C94D5A059511A10250B93168"/>
+            </CertificateChain>
+            <Trusted>false</Trusted>
+            <SelfSigned>false</SelfSigned>
+            <CertificatePolicies>
+                <certificatePolicy cpsUrl="https://www.certigna.fr/autorites/">1.2.250.1.177.2.6.1.1.1</certificatePolicy>
+            </CertificatePolicies>
+            <TrustedServiceProviders>
+                <TrustedServiceProvider TL="TL-4E65C37A96DB77E5472DF7E247A845B41A5069EF4FD0819637BEF2B91839301F">
+                    <TSPNames>
+                        <TSPName lang="en">Certigna</TSPName>
+                        <TSPName lang="fr">Certigna</TSPName>
+                    </TSPNames>
+                    <TSPTradeNames>
+                        <TSPTradeName lang="en">DHIMYOTIS</TSPTradeName>
+                        <TSPTradeName lang="fr">Dhimyotis</TSPTradeName>
+                    </TSPTradeNames>
+                    <TSPRegistrationIdentifiers>
+                        <TSPRegistrationIdentifier>VATFR-85481463081</TSPRegistrationIdentifier>
+                    </TSPRegistrationIdentifiers>
+                    <TrustedServices>
+                        <TrustedService ServiceDigitalIdentifier="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2020-07-10T00:00:00Z</StartDate>
+                            <CapturedQualifiers/>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                        <TrustedService ServiceDigitalIdentifier="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D">
+                            <ServiceNames>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de mails et de documents eIDAS - 1.2.250.1.177.2.6.1.41.1</ServiceName>
+                                <ServiceName lang="en">Certigna Entity CA - Cachet de signature de jetons d'horodatage RGS**/ eIDAS - 1.2.250.1.177.2.6.1.6.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de mails et de documents ** - 1.2.250.1.177.2.6.1.4.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de mails et de documents eIDAS - 1.2.250.1.177.2.6.1.41.1</ServiceName>
+                                <ServiceName lang="fr">Certigna Entity CA - Cachet de signature de jetons d'horodatage RGS**/ eIDAS - 1.2.250.1.177.2.6.1.6.1</ServiceName>
+                            </ServiceNames>
+                            <ServiceType>http: //uri.etsi.org/TrstSvc/Svctype/CA/QC</ServiceType>
+                            <Status>http: //uri.etsi.org/TrstSvc/TrustedList/Svcstatus/granted</Status>
+                            <StartDate>2019-08-01T00:00:00Z</StartDate>
+                            <EndDate>2020-07-10T00:00:00Z</EndDate>
+                            <CapturedQualifiers/>
+                            <AdditionalServiceInfoUris>
+                                <AdditionalServiceInfoUri>http: //uri.etsi.org/TrstSvc/TrustedList/SvcInfoExt/ForeSeals</AdditionalServiceInfoUri>
+                            </AdditionalServiceInfoUris>
+                        </TrustedService>
+                    </TrustedServices>
+                </TrustedServiceProvider>
+            </TrustedServiceProviders>
+            <Revocations>
+                <CertificateRevocation Revocation="R-CAA59558FED06422BB7C5D0973BD8675138780B3D2BAC68BAC29C20247BD414B">
+                    <Status>GOOD</Status>
+                </CertificateRevocation>
+            </Revocations>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>8DPjXTzoEmoK99r+HCMBAQ3g+KXMDF8QHGXTX79697M=</DigestValue>
+            </DigestAlgoAndValue>
+        </Certificate>
+    </UsedCertificates>
+    <UsedRevocations>
+        <Revocation Id="R-CAA59558FED06422BB7C5D0973BD8675138780B3D2BAC68BAC29C20247BD414B">
+            <Origin>EXTERNAL</Origin>
+            <Type>OCSP</Type>
+            <SourceAddress>http: //entityca.ocsp.certigna.fr</SourceAddress>
+            <ProductionDate>2022-08-29T13:24:39Z</ProductionDate>
+            <ThisUpdate>2022-08-29T13:24:39Z</ThisUpdate>
+            <NextUpdate>2022-09-04T13:24:39Z</NextUpdate>
+            <ArchiveCutOff>2015-11-25T10:24:07Z</ArchiveCutOff>
+            <CertHashExtensionPresent>false</CertHashExtensionPresent>
+            <CertHashExtensionMatch>false</CertHashExtensionMatch>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>2048</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-8EA95C9511F084481CBDC1CF11103BD115F960E1B15296DE05C3E09BC712AE23"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-8EA95C9511F084481CBDC1CF11103BD115F960E1B15296DE05C3E09BC712AE23"/>
+                <ChainItem Certificate="C-EBBF4DC600C17DA04381DEFDCFC119C3F34EFB4A04D0860910B813C7792D7585"/>
+                <ChainItem Certificate="C-E3B6A2DB2ED7CE48842F7AC53241C7B71D54144BFB40C11F3F1D0B42F5EEA12D"/>
+            </CertificateChain>
+            <FoundCertificates>
+                <RelatedCertificate Certificate="C-8EA95C9511F084481CBDC1CF11103BD115F960E1B15296DE05C3E09BC712AE23">
+                    <Origin>BASIC_OCSP_RESP</Origin>
+                    <CertificateRef>
+                        <Origin>SIGNING_CERTIFICATE</Origin>
+                        <SerialInfo>
+                            <Ski>fagh3fgXeGPGpwgW7E72AGmdHqo=</Ski>
+                        </SerialInfo>
+                    </CertificateRef>
+                </RelatedCertificate>
+                <RelatedCertificate Certificate="C-E3B6A2DB2ED7CE48842F7AC53241C7B71D54144BFB40C11F3F1D0B42F5EEA12D">
+                    <Origin>BASIC_OCSP_RESP</Origin>
+                </RelatedCertificate>
+                <RelatedCertificate Certificate="C-EBBF4DC600C17DA04381DEFDCFC119C3F34EFB4A04D0860910B813C7792D7585">
+                    <Origin>BASIC_OCSP_RESP</Origin>
+                </RelatedCertificate>
+            </FoundCertificates>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>yqWVWP7QZCK7fF0Jc72GdROHgLPSusaLrCnCAke9QUs=</DigestValue>
+            </DigestAlgoAndValue>
+        </Revocation>
+    </UsedRevocations>
+    <UsedTimestamps>
+        <Timestamp Type="SIGNATURE_TIMESTAMP" Id="T-E73A3CEFF1CDAFB4DA693071FAB74D07A91E85518D28D531D22ED1B6C65B087F">
+            <ProductionTime>2022-08-09T10:07:39Z</ProductionTime>
+            <DigestMatcher type="MESSAGE_IMPRINT">
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>7SEZzmcTY5V+Y/NW2k9iR2Of10xLHvHgkynr/jy0Hd4=</DigestValue>
+                <DataFound>true</DataFound>
+                <DataIntact>true</DataIntact>
+            </DigestMatcher>
+            <BasicSignature>
+                <EncryptionAlgoUsedToSignThisToken>RSA</EncryptionAlgoUsedToSignThisToken>
+                <KeyLengthUsedToSignThisToken>2048</KeyLengthUsedToSignThisToken>
+                <DigestAlgoUsedToSignThisToken>SHA256</DigestAlgoUsedToSignThisToken>
+                <SignatureIntact>true</SignatureIntact>
+                <SignatureValid>true</SignatureValid>
+            </BasicSignature>
+            <SigningCertificate Certificate="C-25C6EB84D9EB27935DBFAB1A95CE6EB82A02130697CBD42EFBC4A47C087F64BB"/>
+            <CertificateChain>
+                <ChainItem Certificate="C-25C6EB84D9EB27935DBFAB1A95CE6EB82A02130697CBD42EFBC4A47C087F64BB"/>
+                <ChainItem Certificate="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D"/>
+                <ChainItem Certificate="C-D48D3D23EEDB50A459E55197601C27774B9D7B18C94D5A059511A10250B93168"/>
+            </CertificateChain>
+            <SignerInformationStore>
+                <SignerInfo Current="true">
+                    <IssuerName>CN=Certigna Entity CA, OID.2.5.4.97=NTRFR-48146308100036, OU=0002 48146308100036, O=DHIMYOTIS, C=FR</IssuerName>
+                    <SerialNumber>293100028812442306086676678657614439419</SerialNumber>
+                </SignerInfo>
+            </SignerInformationStore>
+            <TSAGeneralName contentMatch="true" orderMatch="true">2.5.4.5=#130a54323134333631313836,CN=MINISTERE DE L INTERIEUR - HORODATAGE-MI-07,OU=0002 11001401600015,
+    2.5.4.97=#0c144e545246522d3131303031343031363030303135,O=MINISTERE DE L INTERIEUR,C=FR</TSAGeneralName>
+            <FoundCertificates>
+                <RelatedCertificate Certificate="C-25C6EB84D9EB27935DBFAB1A95CE6EB82A02130697CBD42EFBC4A47C087F64BB">
+                    <Origin>SIGNED_DATA</Origin>
+                    <CertificateRef>
+                        <Origin>SIGNING_CERTIFICATE</Origin>
+                        <DigestAlgoAndValue match="true">
+                            <DigestMethod>SHA256</DigestMethod>
+                            <DigestValue>JcbrhNnrJ5Ndv6salc5uuCoCEwaXy9Qu+8SkfAh/ZLs=</DigestValue>
+                        </DigestAlgoAndValue>
+                    </CertificateRef>
+                </RelatedCertificate>
+            </FoundCertificates>
+            <FoundRevocations/>
+            <TimestampedObjects>
+                <TimestampedObject Token="D-275B4E1DC3669EF36D99FEBEF58C080B8BF41B261BE5E673DA85EF391BC95029" Category="SIGNED_DATA"/>
+                <TimestampedObject Token="S-D5DD97512283508B77E50CCCAE9FBD28EBFD63401D60B7B78C73A7C571EAD0DE" Category="SIGNATURE"/>
+                <TimestampedObject Token="C-F033E35D3CE8126A0AF7DAFE1C2301010DE0F8A5CC0C5F101C65D35FBF7AF7B3" Category="CERTIFICATE"/>
+            </TimestampedObjects>
+            <TimestampScopes/>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>5zo87/HNr7TaaTBx+rdNB6kehVGNKNUx0i7RtsZbCH8=</DigestValue>
+            </DigestAlgoAndValue>
+        </Timestamp>
+    </UsedTimestamps>
+    <OriginalDocuments>
+        <SignerData Id="D-275B4E1DC3669EF36D99FEBEF58C080B8BF41B261BE5E673DA85EF391BC95029">
+            <ReferencedName>Full PDF</ReferencedName>
+            <DigestAlgoAndValue>
+                <DigestMethod>SHA256</DigestMethod>
+                <DigestValue>3ktNNVs6D01VZfXCb0bML22pbZua1Gi1q1iDriG7Zps=</DigestValue>
+            </DigestAlgoAndValue>
+        </SignerData>
+    </OriginalDocuments>
+    <TrustedLists>
+        <TrustedList Id="TL-4E65C37A96DB77E5472DF7E247A845B41A5069EF4FD0819637BEF2B91839301F">
+            <CountryCode>FR</CountryCode>
+            <Url>http: //www.ssi.gouv.fr/eidas/TL-FR.xml</Url>
+            <SequenceNumber>104</SequenceNumber>
+            <Version>5</Version>
+            <LastLoading>2022-08-29T13:23:17Z</LastLoading>
+            <IssueDate>2022-08-04T00:00:44Z</IssueDate>
+            <NextUpdate>2023-02-04T01:00:44Z</NextUpdate>
+            <WellSigned>false</WellSigned>
+        </TrustedList>
+    </TrustedLists>
+</DiagnosticData>

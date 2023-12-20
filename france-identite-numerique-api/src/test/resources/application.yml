@@ -1,0 +1,80 @@
+app:
+  name: attestation-validator-api
+  description: Microservice attestation validator
+  context-path: attestation-validator-api
+spring:
+  application:
+    name: attestation-validator-api
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  servlet:
+    multipart:
+      max-file-size: 500KB
+      max-request-size: 500KB
+  datasource:
+    url: jdbc:h2:mem:cache
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 20
+      auto-commit: false
+      pool-name: SGIN-DSS-Hikari-Pool
+server:
+  servlet:
+    context-path: /api
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus
+logging:
+  level:
+    root: INFO
+  message:
+    basename: log_messages
+  info:
+    composant: SGIN Coeur
+    reference: 10100
+dss:
+  truststore:
+    file: TLTrustStore.jks
+    type: JKS
+    password: changeit
+  trustedlist:
+    url: http://www.ssi.gouv.fr/eidas/TL-FR.xml
+    proxy:
+      enable: false
+      host: http://host
+      port: 8080
+  dataloader:
+    ssl-protocol: TLSv1.3
+    ssl-protocols-supported: null
+    connection:
+      timeout: 5000
+      request:
+        timeout: 5000
+    redirect:
+      enabled: true
+  cron:
+    tl:
+      loader:
+        enable: false
+        initial-delay: 0
+        delay: 3600
+  cache:
+    tl-expiration-time-min: 1200
+    ocsp-expiration-time-min: 1200
+    crl-expiration-time-min: 1200
+sgin:
+  signature:
+    verify-hash: true
+    policy-id: 1.2.250.1.152.202.1.1.1
+    pattern:
+      organizational-unit: 0002110014016
+      organization-identifier: NTRFR-110014016
+  file:
+    max-file-size-kb: 500
+    get-reports: true

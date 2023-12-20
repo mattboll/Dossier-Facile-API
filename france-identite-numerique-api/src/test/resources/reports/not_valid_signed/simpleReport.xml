@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SimpleReport ValidationTime="2022-08-29T13:24:45Z" xmlns="http://dss.esig.europa.eu/validation/simple-report">
+    <ValidationPolicy>
+        <PolicyName>QES AdESQC TL based</PolicyName>
+        <PolicyDescription>Validate electronic signatures and indicates whether they are Advanced electronic Signatures (AdES), AdES supported by a Qualified Certificate (AdES/QC) or a
+		Qualified electronic Signature (QES). All certificates and their related chains supporting the signatures are validated against the EU Member State Trusted Lists (this includes
+		signer's certificate and certificates used to validate certificate validity status services - CRLs, OCSP, and time-stamps).
+	</PolicyDescription>
+    </ValidationPolicy>
+    <DocumentName></DocumentName>
+    <ValidSignaturesCount>0</ValidSignaturesCount>
+    <SignaturesCount>1</SignaturesCount>
+    <Signature SignatureFormat="PAdES-BASELINE-T" Id="S-D5DD97512283508B77E50CCCAE9FBD28EBFD63401D60B7B78C73A7C571EAD0DE">
+        <CertificateChain>
+            <Certificate>
+                <id>C-F033E35D3CE8126A0AF7DAFE1C2301010DE0F8A5CC0C5F101C65D35FBF7AF7B3</id>
+                <qualifiedName>MINISTERE DE L INTERIEUR - signature_dxs02_mi</qualifiedName>
+            </Certificate>
+            <Certificate>
+                <id>C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D</id>
+                <qualifiedName>Certigna Entity CA</qualifiedName>
+            </Certificate>
+            <Certificate>
+                <id>C-D48D3D23EEDB50A459E55197601C27774B9D7B18C94D5A059511A10250B93168</id>
+                <qualifiedName>Certigna Root CA</qualifiedName>
+            </Certificate>
+        </CertificateChain>
+        <Indication>INDETERMINATE</Indication>
+        <SubIndication>POLICY_PROCESSING_ERROR</SubIndication>
+        <AdESValidationDetails>
+            <Error Key="BBB_VCI_ISPM_ANS">The signature policy's digest value does not match the computed value!</Error>
+        </AdESValidationDetails>
+        <QualificationDetails>
+            <Error Key="QUAL_HAS_CAQC_ANS">The certificate is not related to a CA/QC!</Error>
+            <Warning Key="QUAL_IS_ADES_IND">The signature/seal is an INDETERMINATE AdES digital signature!</Warning>
+            <Warning Key="QUAL_QC_AT_ST_ANS">The certificate is not qualified at (best) signing time!</Warning>
+            <Warning Key="QUAL_QC_AT_CC_ANS">The certificate is not qualified at issuance time!</Warning>
+            <Warning Key="QUAL_QSCD_AT_ST_ANS">The private key does not reside in a QSCD at (best) signing time!</Warning>
+            <Warning Key="QUAL_TL_WS_ANS">The trusted list is not well signed!</Warning>
+        </QualificationDetails>
+        <SigningTime>2022-08-09T10:07:38Z</SigningTime>
+        <BestSignatureTime>2022-08-29T13:24:45Z</BestSignatureTime>
+        <SignedBy>MINISTERE DE L INTERIEUR - signature_dxs02_mi</SignedBy>
+        <SignatureLevel description="Indeterminate Advanced Electronic Signature">Indeterminate AdESig</SignatureLevel>
+        <SignatureScope Id="123456" name="Full PDF" scope="FULL">The document ByteRange :[
+        0,
+        172281,
+        206111,
+        73382
+    ]</SignatureScope>
+        <Timestamps>
+            <Timestamp Id="T-E73A3CEFF1CDAFB4DA693071FAB74D07A91E85518D28D531D22ED1B6C65B087F">
+                <CertificateChain>
+                    <Certificate>
+                        <id>C-25C6EB84D9EB27935DBFAB1A95CE6EB82A02130697CBD42EFBC4A47C087F64BB</id>
+                        <qualifiedName>MINISTERE DE L INTERIEUR - HORODATAGE-MI-07</qualifiedName>
+                    </Certificate>
+                    <Certificate>
+                        <id>C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D</id>
+                        <qualifiedName>Certigna Entity CA</qualifiedName>
+                    </Certificate>
+                    <Certificate>
+                        <id>C-D48D3D23EEDB50A459E55197601C27774B9D7B18C94D5A059511A10250B93168</id>
+                        <qualifiedName>Certigna Root CA</qualifiedName>
+                    </Certificate>
+                </CertificateChain>
+                <Indication>PASSED</Indication>
+                <QualificationDetails>
+                    <Warning Key="QUAL_TL_WS_ANS">The trusted list is not well signed!</Warning>
+                </QualificationDetails>
+                <ProductionTime>2022-08-09T10:07:39Z</ProductionTime>
+                <ProducedBy>MINISTERE DE L INTERIEUR - HORODATAGE-MI-07</ProducedBy>
+                <TimestampLevel description="Qualified timestamp">QTSA</TimestampLevel>
+            </Timestamp>
+        </Timestamps>
+    </Signature>
+</SimpleReport>

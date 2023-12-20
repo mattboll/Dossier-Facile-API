@@ -1,0 +1,82 @@
+app:
+  name: attestation-validator-api
+  description: Microservice attestation validator
+  context-path: attestation-validator-api
+spring:
+  application:
+    name: attestation-validator-api
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  servlet:
+    multipart:
+      max-file-size: ${SGIN_FILE_MAX_SIZE_KB:500}KB
+  datasource:
+    url: jdbc:h2:mem:cache
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+    hikari:
+      connection-timeout: ${DSS_CACHE_DATASOURCE_HIKARI_CONNECTION_TIMEOUT:20000}
+      maximum-pool-size: ${DSS_CACHE_DATASOURCE_HIKARI_MAX_POOL_SIZE:20}
+      auto-commit: false
+      pool-name: SGIN-DSS-Hikari-Pool
+server:
+  forward-headers-strategy: FRAMEWORK
+  servlet:
+    context-path: /api
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus
+logging:
+  level:
+    root: ${ROOT_LEVEL:#{'INFO'}}
+  message:
+    basename: log_messages
+  info:
+    composant: SGIN Coeur
+    reference: 10100
+dss:
+  truststore:
+    file: ${DSS_TRUSTSTORE_FILE:#{'TLTrustStore.jks'}}
+    type: ${DSS_TRUSTSTORE_TYPE:#{'JKS'}}
+    password: ${DSS_TRUSTSTORE_PASSWORD:#{'changeit'}}
+  trustedlist:
+    url: ${DSS_TL_URL:#{'http://www.ssi.gouv.fr/eidas/TL-FR.xml'}}
+    proxy:
+      enable: ${DSS_TL_PROXY_ENABLE:#{false}}
+      host: ${DSS_TL_PROXY_HOST:#{null}}
+      port: ${DSS_TL_PROXY_PORT:8080}
+  dataloader:
+    ssl-protocol: ${DSS_DL_SSL_PROTOCOL:#{'TLSv1.3'}}
+    ssl-protocols-supported: ${DSS_DL_SSL_PROTOCOLS_SUPPORTED:#{null}}
+    connection:
+      timeout: ${DSS_DL_CONNECTION_TIMEOUT:5000}
+      request:
+        timeout: ${DSS_DL_CONNECTION_REQ_TIMEOUT:5000}
+    redirect:
+      enabled: ${DSS_DL_REDIRECT_ENABLED:#{true}}
+  cron:
+    tl:
+      loader:
+        enable: ${DSS_CRON_TL_LOADER_ENABLE:#{true}}
+        initial-delay: ${DSS_CRON_TL_LOADER_INIT_DELAY:0}
+        delay: ${DSS_CRON_TL_LOADER_DELAY:3600}
+  cache:
+    tl-expiration-time-min: ${DSS_CACHE_TL_EXPIRATION_TIME_MIN:1200}
+    ocsp-expiration-time-min: ${DSS_CACHE_OCSP_EXPIRATION_TIME_MIN:1200}
+    crl-expiration-time-min: ${DSS_CACHE_CRL_EXPIRATION_TIME_MIN:1200}
+  crt:
+    extra: ${DSS_EXTRA_CA_CERTS:#{null}}
+sgin:
+  signature:
+    verify-hash: ${SGIN_SIGNATURE_VERIFY_HASH:#{true}}
+    policy-id: ${SGIN_SIGNATURE_POLICY_ID:#{'1.2.250.1.152.202.1.1.1'}}
+    pattern:
+      organizational-unit: ${SGIN_SIGNATURE_PATTERN_ORG_UNIT:#{'0002110014016'}}
+      organization-identifier: ${SGIN_SIGNATURE_PATTERN_ORG_IDENTIFIER:#{'NTRFR-110014016'}}
+  file:
+    max-file-size-kb: ${SGIN_FILE_MAX_SIZE_KB:500}
+    get-reports: ${SGIN_GET_REPORTS:#{false}}

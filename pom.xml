@@ -15,6 +15,7 @@
         <module>dossierfacile-api-watermark</module>
         <module>dossierfacile-pdf-generator</module>
         <module>dossierfacile-task-scheduler</module>
+	<module>france-identite-numerique-api</module>
     </modules>
     <packaging>pom</packaging>
 

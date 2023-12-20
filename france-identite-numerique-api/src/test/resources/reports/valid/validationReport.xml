@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ValidationReport xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:ns2="http://uri.etsi.org/19102/v1.2.1#" xmlns:ns4="http://uri.etsi.org/02231/v2#" xmlns:ns3="http://uri.etsi.org/01903/v1.3.2#">
+    <ns2:SignatureValidationReport>
+        <ns2:SignatureIdentifier id="S-D5DD97512283508B77E50CCCAE9FBD28EBFD63401D60B7B78C73A7C571EAD0DE">
+            <ns2:DigestAlgAndValue>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>8CRDFJ0s8DpagPl5bi33tnc7XLrlpI6Ni9OlR6m+Go8=</DigestValue>
+            </ns2:DigestAlgAndValue>
+            <SignatureValue>jNxWXBGO3T68gMjDyInWDTLAJ5rErHE7i3N8izPlLdOlw7od87QUGqnMzJlKBh0hea1mPvGG04UIE5Gd2Tw+pcN2U1fHuKC8uIVQhYlgrlxNfvtqCpCq1yG+kO7eJs2F8AZ743l6S7bDLaSDl/4jPa9R1MfSvvSz4RiQeNmS0vbTRckBWcBhtP0/GhPneKwuwI+H6G3APGxKwldmpE8Jva5USdQ2otFsg0ehRLIqL8HUQh5pScWZe3tCfeUJjcMYbmpt68W/QZzVstnr/o0tgMPwoBDMzdJUCxeDQ4g33DL/uT1bAXEatp4UB6XeXfLsEXK34sjmMX/dA8I8hjl1nA==</SignatureValue>
+            <ns2:HashOnly>false</ns2:HashOnly>
+            <ns2:DocHashOnly>false</ns2:DocHashOnly>
+        </ns2:SignatureIdentifier>
+        <ns2:ValidationConstraintsEvaluationReport>
+            <ns2:ValidationConstraint>
+                <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:formatChecking</ns2:ValidationConstraintIdentifier>
+                <ns2:ConstraintStatus>
+                    <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                </ns2:ConstraintStatus>
+                <ns2:ValidationStatus>
+                    <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                </ns2:ValidationStatus>
+            </ns2:ValidationConstraint>
+            <ns2:ValidationConstraint>
+                <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:identificationOfTheSigningCertificate</ns2:ValidationConstraintIdentifier>
+                <ns2:ConstraintStatus>
+                    <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                </ns2:ConstraintStatus>
+                <ns2:ValidationStatus>
+                    <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                </ns2:ValidationStatus>
+            </ns2:ValidationConstraint>
+            <ns2:ValidationConstraint>
+                <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:validationContextInitialization</ns2:ValidationConstraintIdentifier>
+                <ns2:ConstraintStatus>
+                    <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                </ns2:ConstraintStatus>
+                <ns2:ValidationStatus>
+                    <ns2:MainIndication>urn:etsi:019102:mainindication:indeterminate</ns2:MainIndication>
+                    <ns2:SubIndication>urn:etsi:019102:subindication:POLICY_PROCESSING_ERROR</ns2:SubIndication>
+                </ns2:ValidationStatus>
+            </ns2:ValidationConstraint>
+            <ns2:ValidationConstraint>
+                <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:cryptographicVerification</ns2:ValidationConstraintIdentifier>
+                <ns2:ConstraintStatus>
+                    <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                </ns2:ConstraintStatus>
+                <ns2:ValidationStatus>
+                    <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                </ns2:ValidationStatus>
+            </ns2:ValidationConstraint>
+            <ns2:ValidationConstraint>
+                <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:signatureAcceptanceValidation</ns2:ValidationConstraintIdentifier>
+                <ns2:ConstraintStatus>
+                    <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                </ns2:ConstraintStatus>
+                <ns2:ValidationStatus>
+                    <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                </ns2:ValidationStatus>
+            </ns2:ValidationConstraint>
+            <ns2:ValidationConstraint>
+                <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:x509CertificateValidation</ns2:ValidationConstraintIdentifier>
+                <ns2:ConstraintStatus>
+                    <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                </ns2:ConstraintStatus>
+                <ns2:ValidationStatus>
+                    <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                </ns2:ValidationStatus>
+            </ns2:ValidationConstraint>
+            <ns2:ValidationConstraint>
+                <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:pastSignatureValidation</ns2:ValidationConstraintIdentifier>
+                <ns2:ConstraintStatus>
+                    <ns2:Status>urn:etsi:019102:constraintStatus:disabled</ns2:Status>
+                </ns2:ConstraintStatus>
+            </ns2:ValidationConstraint>
+            <ns2:ValidationConstraint>
+                <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:pastCertificateValidation</ns2:ValidationConstraintIdentifier>
+                <ns2:ConstraintStatus>
+                    <ns2:Status>urn:etsi:019102:constraintStatus:disabled</ns2:Status>
+                </ns2:ConstraintStatus>
+            </ns2:ValidationConstraint>
+            <ns2:ValidationConstraint>
+                <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:validationTimeSliding</ns2:ValidationConstraintIdentifier>
+                <ns2:ConstraintStatus>
+                    <ns2:Status>urn:etsi:019102:constraintStatus:disabled</ns2:Status>
+                </ns2:ConstraintStatus>
+            </ns2:ValidationConstraint>
+        </ns2:ValidationConstraintsEvaluationReport>
+        <ns2:ValidationTimeInfo>
+            <ns2:ValidationTime>2022-08-29T13:24:45Z</ns2:ValidationTime>
+            <ns2:BestSignatureTime>
+                <ns2:POETime>2022-08-29T13:24:45Z</ns2:POETime>
+                <ns2:TypeOfProof>urn:etsi:019102:poetype:validation</ns2:TypeOfProof>
+            </ns2:BestSignatureTime>
+        </ns2:ValidationTimeInfo>
+        <ns2:SignersDocument>
+            <ns2:DigestAlgAndValue>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>3ktNNVs6D01VZfXCb0bML22pbZua1Gi1q1iDriG7Zps=</DigestValue>
+            </ns2:DigestAlgAndValue>
+            <ns2:SignersDocumentRepresentation VOReference="D-275B4E1DC3669EF36D99FEBEF58C080B8BF41B261BE5E673DA85EF391BC95029"/>
+        </ns2:SignersDocument>
+        <ns2:SignatureAttributes>
+            <ns2:SigningTime Signed="true">
+                <ns2:Time>2022-08-09T10:07:38Z</ns2:Time>
+            </ns2:SigningTime>
+            <ns2:SigningCertificate Signed="true">
+                <ns2:AttributeObject VOReference="C-F033E35D3CE8126A0AF7DAFE1C2301010DE0F8A5CC0C5F101C65D35FBF7AF7B3"/>
+            </ns2:SigningCertificate>
+            <ns2:DataObjectFormat Signed="true">
+                <ns2:ContentType>1.2.840.113549.1.7.1</ns2:ContentType>
+            </ns2:DataObjectFormat>
+            <ns2:CommitmentTypeIndication Signed="true">
+                <ns2:CommitmentTypeIdentifier>1.2.840.113549.1.9.16.6.1</ns2:CommitmentTypeIdentifier>
+            </ns2:CommitmentTypeIndication>
+            <ns2:SigPolicyIdentifier Signed="true">
+                <ns2:SigPolicyId>1.2.250.1.152.202.1.1.1</ns2:SigPolicyId>
+            </ns2:SigPolicyIdentifier>
+            <ns2:SignatureTimeStamp>
+                <ns2:AttributeObject VOReference="T-E73A3CEFF1CDAFB4DA693071FAB74D07A91E85518D28D531D22ED1B6C65B087F"/>
+                <ns2:TimeStampValue>2022-08-09T10:07:39Z</ns2:TimeStampValue>
+            </ns2:SignatureTimeStamp>
+            <ns2:MessageDigest Signed="true">
+                <ns2:Digest>BAva5z1GKw/rAhzUsaN7/FlDUFneFhz3udsF2lVPvl8=</ns2:Digest>
+            </ns2:MessageDigest>
+            <ns2:Name>
+                <ns2:NameElement>FRANCE IDENTITE</ns2:NameElement>
+            </ns2:Name>
+            <ns2:ContactInfo>
+                <ns2:ContactInfoElement>contact@france-identite.gouv.fr</ns2:ContactInfoElement>
+            </ns2:ContactInfo>
+            <ns2:SubFilter>
+                <ns2:SubFilterElement>ETSI.CAdES.detached</ns2:SubFilterElement>
+            </ns2:SubFilter>
+            <ns2:ByteRange>0 172281 206111 73382</ns2:ByteRange>
+            <ns2:Filter>
+                <ns2:Filter>Adobe.PPKLite</ns2:Filter>
+            </ns2:Filter>
+        </ns2:SignatureAttributes>
+        <ns2:SignerInformation Pseudonym="false">
+            <ns2:SignerCertificate VOReference="C-F033E35D3CE8126A0AF7DAFE1C2301010DE0F8A5CC0C5F101C65D35FBF7AF7B3"/>
+            <ns2:Signer>MINISTERE DE L INTERIEUR - signature_dxs02_mi</ns2:Signer>
+        </ns2:SignerInformation>
+        <ns2:SignatureQuality>
+            <ns2:SignatureQualityInformation>urn:cef:dss:signatureQualification:indeterminateAdESig</ns2:SignatureQualityInformation>
+        </ns2:SignatureQuality>
+        <ns2:SignatureValidationProcess>
+            <ns2:SignatureValidationProcessID>urn:etsi:019102:validationprocess:LTA</ns2:SignatureValidationProcessID>
+        </ns2:SignatureValidationProcess>
+        <ns2:SignatureValidationStatus>
+            <ns2:MainIndication>urn:etsi:019102:mainindication:indeterminate</ns2:MainIndication>
+            <ns2:SubIndication>urn:etsi:019102:subindication:POLICY_PROCESSING_ERROR</ns2:SubIndication>
+            <ns2:AssociatedValidationReportData>
+                <ns2:TrustAnchor VOReference="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D"/>
+                <ns2:CertificateChain>
+                    <ns2:SigningCertificate VOReference="C-F033E35D3CE8126A0AF7DAFE1C2301010DE0F8A5CC0C5F101C65D35FBF7AF7B3"/>
+                    <ns2:TrustAnchor VOReference="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D"/>
+                </ns2:CertificateChain>
+                <ns2:CryptoInformation>
+                    <ns2:ValidationObjectId VOReference="S-D5DD97512283508B77E50CCCAE9FBD28EBFD63401D60B7B78C73A7C571EAD0DE"/>
+                    <ns2:Algorithm>http://www.w3.org/2001/04/xmldsig-more#rsa-sha256</ns2:Algorithm>
+                    <ns2:SecureAlgorithm>true</ns2:SecureAlgorithm>
+                    <ns2:NotAfter>2022-12-31T23:00:00Z</ns2:NotAfter>
+                </ns2:CryptoInformation>
+            </ns2:AssociatedValidationReportData>
+        </ns2:SignatureValidationStatus>
+    </ns2:SignatureValidationReport>
+    <ns2:SignatureValidationObjects>
+        <ns2:ValidationObject id="T-E73A3CEFF1CDAFB4DA693071FAB74D07A91E85518D28D531D22ED1B6C65B087F">
+            <ns2:ObjectType>urn:etsi:019102:validationObject:timestamp</ns2:ObjectType>
+            <ns2:ValidationObjectRepresentation>
+                <ns2:DigestAlgAndValue>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>5zo87/HNr7TaaTBx+rdNB6kehVGNKNUx0i7RtsZbCH8=</DigestValue>
+                </ns2:DigestAlgAndValue>
+            </ns2:ValidationObjectRepresentation>
+            <ns2:POEProvisioning>
+                <ns2:POETime>2022-08-09T10:07:39Z</ns2:POETime>
+                <ns2:ValidationObject VOReference="C-F033E35D3CE8126A0AF7DAFE1C2301010DE0F8A5CC0C5F101C65D35FBF7AF7B3"/>
+                <ns2:ValidationObject VOReference="D-275B4E1DC3669EF36D99FEBEF58C080B8BF41B261BE5E673DA85EF391BC95029"/>
+                <ns2:SignatureReference>
+                    <ns2:DigestMethod>http://www.w3.org/2001/04/xmlenc#sha256</ns2:DigestMethod>
+                    <ns2:DigestValue>E+9U6fM9pMsMq+V/8/GrKAgwZyKd9UqJJVa0ujtjcOY=</ns2:DigestValue>
+                </ns2:SignatureReference>
+            </ns2:POEProvisioning>
+            <ns2:ValidationReport>
+                <ns2:ValidationConstraintsEvaluationReport>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:formatChecking</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:disabled</ns2:Status>
+                        </ns2:ConstraintStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:identificationOfTheSigningCertificate</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                        </ns2:ConstraintStatus>
+                        <ns2:ValidationStatus>
+                            <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                        </ns2:ValidationStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:validationContextInitialization</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:disabled</ns2:Status>
+                        </ns2:ConstraintStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:cryptographicVerification</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                        </ns2:ConstraintStatus>
+                        <ns2:ValidationStatus>
+                            <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                        </ns2:ValidationStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:signatureAcceptanceValidation</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                        </ns2:ConstraintStatus>
+                        <ns2:ValidationStatus>
+                            <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                        </ns2:ValidationStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:x509CertificateValidation</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                        </ns2:ConstraintStatus>
+                        <ns2:ValidationStatus>
+                            <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                        </ns2:ValidationStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:pastSignatureValidation</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:disabled</ns2:Status>
+                        </ns2:ConstraintStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:pastCertificateValidation</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:disabled</ns2:Status>
+                        </ns2:ConstraintStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:validationTimeSliding</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:disabled</ns2:Status>
+                        </ns2:ConstraintStatus>
+                    </ns2:ValidationConstraint>
+                </ns2:ValidationConstraintsEvaluationReport>
+                <ns2:SignerInformation>
+                    <ns2:SignerCertificate VOReference="C-25C6EB84D9EB27935DBFAB1A95CE6EB82A02130697CBD42EFBC4A47C087F64BB"/>
+                    <ns2:Signer>MINISTERE DE L INTERIEUR - HORODATAGE-MI-07</ns2:Signer>
+                </ns2:SignerInformation>
+                <ns2:SignatureQuality>
+                    <ns2:SignatureQualityInformation>urn:cef:dss:timestampQualification:QTSA</ns2:SignatureQualityInformation>
+                </ns2:SignatureQuality>
+                <ns2:SignatureValidationStatus>
+                    <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                    <ns2:AssociatedValidationReportData>
+                        <ns2:TrustAnchor VOReference="C-25C6EB84D9EB27935DBFAB1A95CE6EB82A02130697CBD42EFBC4A47C087F64BB"/>
+                        <ns2:CertificateChain>
+                            <ns2:SigningCertificate VOReference="C-25C6EB84D9EB27935DBFAB1A95CE6EB82A02130697CBD42EFBC4A47C087F64BB"/>
+                            <ns2:TrustAnchor VOReference="C-25C6EB84D9EB27935DBFAB1A95CE6EB82A02130697CBD42EFBC4A47C087F64BB"/>
+                        </ns2:CertificateChain>
+                        <ns2:CryptoInformation>
+                            <ns2:ValidationObjectId VOReference="T-E73A3CEFF1CDAFB4DA693071FAB74D07A91E85518D28D531D22ED1B6C65B087F"/>
+                            <ns2:Algorithm>http://www.w3.org/2001/04/xmldsig-more#rsa-sha256</ns2:Algorithm>
+                            <ns2:SecureAlgorithm>true</ns2:SecureAlgorithm>
+                            <ns2:NotAfter>2022-12-31T23:00:00Z</ns2:NotAfter>
+                        </ns2:CryptoInformation>
+                    </ns2:AssociatedValidationReportData>
+                </ns2:SignatureValidationStatus>
+            </ns2:ValidationReport>
+        </ns2:ValidationObject>
+        <ns2:ValidationObject id="C-1CC358A6DFA0A76BB5470660D78F3B25F23CCD6395667E49CCFC8201DA3D192D">
+            <ns2:ObjectType>urn:etsi:019102:validationObject:certificate</ns2:ObjectType>
+            <ns2:ValidationObjectRepresentation>
+                <ns2:DigestAlgAndValue>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>HMNYpt+gp2u1RwZg1487JfI8zWOVZn5JzPyCAdo9GS0=</DigestValue>
+                </ns2:DigestAlgAndValue>
+            </ns2:ValidationObjectRepresentation>
+            <ns2:POE>
+                <ns2:POETime>2022-08-29T13:24:45Z</ns2:POETime>
+                <ns2:TypeOfProof>urn:etsi:019102:poetype:validation</ns2:TypeOfProof>
+            </ns2:POE>
+        </ns2:ValidationObject>
+        <ns2:ValidationObject id="C-25C6EB84D9EB27935DBFAB1A95CE6EB82A02130697CBD42EFBC4A47C087F64BB">
+            <ns2:ObjectType>urn:etsi:019102:validationObject:certificate</ns2:ObjectType>
+            <ns2:ValidationObjectRepresentation>
+                <ns2:DigestAlgAndValue>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>JcbrhNnrJ5Ndv6salc5uuCoCEwaXy9Qu+8SkfAh/ZLs=</DigestValue>
+                </ns2:DigestAlgAndValue>
+            </ns2:ValidationObjectRepresentation>
+            <ns2:POE>
+                <ns2:POETime>2022-08-29T13:24:45Z</ns2:POETime>
+                <ns2:TypeOfProof>urn:etsi:019102:poetype:validation</ns2:TypeOfProof>
+            </ns2:POE>
+        </ns2:ValidationObject>
+        <ns2:ValidationObject id="C-8EA95C9511F084481CBDC1CF11103BD115F960E1B15296DE05C3E09BC712AE23">
+            <ns2:ObjectType>urn:etsi:019102:validationObject:certificate</ns2:ObjectType>
+            <ns2:ValidationObjectRepresentation>
+                <ns2:DigestAlgAndValue>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>jqlclRHwhEgcvcHPERA70RX5YOGxUpbeBcPgm8cSriM=</DigestValue>
+                </ns2:DigestAlgAndValue>
+            </ns2:ValidationObjectRepresentation>
+            <ns2:POE>
+                <ns2:POETime>2022-08-29T13:24:45Z</ns2:POETime>
+                <ns2:TypeOfProof>urn:etsi:019102:poetype:validation</ns2:TypeOfProof>
+            </ns2:POE>
+        </ns2:ValidationObject>
+        <ns2:ValidationObject id="C-D48D3D23EEDB50A459E55197601C27774B9D7B18C94D5A059511A10250B93168">
+            <ns2:ObjectType>urn:etsi:019102:validationObject:certificate</ns2:ObjectType>
+            <ns2:ValidationObjectRepresentation>
+                <ns2:DigestAlgAndValue>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>1I09I+7bUKRZ5VGXYBwnd0udexjJTVoFlRGhAlC5MWg=</DigestValue>
+                </ns2:DigestAlgAndValue>
+            </ns2:ValidationObjectRepresentation>
+            <ns2:POE>
+                <ns2:POETime>2022-08-29T13:24:45Z</ns2:POETime>
+                <ns2:TypeOfProof>urn:etsi:019102:poetype:validation</ns2:TypeOfProof>
+            </ns2:POE>
+        </ns2:ValidationObject>
+        <ns2:ValidationObject id="C-E3B6A2DB2ED7CE48842F7AC53241C7B71D54144BFB40C11F3F1D0B42F5EEA12D">
+            <ns2:ObjectType>urn:etsi:019102:validationObject:certificate</ns2:ObjectType>
+            <ns2:ValidationObjectRepresentation>
+                <ns2:DigestAlgAndValue>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>47ai2y7XzkiEL3rFMkHHtx1UFEv7QMEfPx0LQvXuoS0=</DigestValue>
+                </ns2:DigestAlgAndValue>
+            </ns2:ValidationObjectRepresentation>
+            <ns2:POE>
+                <ns2:POETime>2022-08-29T13:24:45Z</ns2:POETime>
+                <ns2:TypeOfProof>urn:etsi:019102:poetype:validation</ns2:TypeOfProof>
+            </ns2:POE>
+        </ns2:ValidationObject>
+        <ns2:ValidationObject id="C-EBBF4DC600C17DA04381DEFDCFC119C3F34EFB4A04D0860910B813C7792D7585">
+            <ns2:ObjectType>urn:etsi:019102:validationObject:certificate</ns2:ObjectType>
+            <ns2:ValidationObjectRepresentation>
+                <ns2:DigestAlgAndValue>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>679NxgDBfaBDgd79z8EZw/NO+0oE0IYJELgTx3ktdYU=</DigestValue>
+                </ns2:DigestAlgAndValue>
+            </ns2:ValidationObjectRepresentation>
+            <ns2:POE>
+                <ns2:POETime>2022-08-29T13:24:45Z</ns2:POETime>
+                <ns2:TypeOfProof>urn:etsi:019102:poetype:validation</ns2:TypeOfProof>
+            </ns2:POE>
+        </ns2:ValidationObject>
+        <ns2:ValidationObject id="C-F033E35D3CE8126A0AF7DAFE1C2301010DE0F8A5CC0C5F101C65D35FBF7AF7B3">
+            <ns2:ObjectType>urn:etsi:019102:validationObject:certificate</ns2:ObjectType>
+            <ns2:ValidationObjectRepresentation>
+                <ns2:DigestAlgAndValue>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>8DPjXTzoEmoK99r+HCMBAQ3g+KXMDF8QHGXTX79697M=</DigestValue>
+                </ns2:DigestAlgAndValue>
+            </ns2:ValidationObjectRepresentation>
+            <ns2:POE>
+                <ns2:POETime>2022-08-09T10:07:39Z</ns2:POETime>
+                <ns2:TypeOfProof>urn:etsi:019102:poetype:validation</ns2:TypeOfProof>
+                <ns2:POEObject VOReference="T-E73A3CEFF1CDAFB4DA693071FAB74D07A91E85518D28D531D22ED1B6C65B087F"/>
+            </ns2:POE>
+        </ns2:ValidationObject>
+        <ns2:ValidationObject id="R-CAA59558FED06422BB7C5D0973BD8675138780B3D2BAC68BAC29C20247BD414B">
+            <ns2:ObjectType>urn:etsi:019102:validationObject:OCSPResponse</ns2:ObjectType>
+            <ns2:ValidationObjectRepresentation>
+                <ns2:DigestAlgAndValue>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>yqWVWP7QZCK7fF0Jc72GdROHgLPSusaLrCnCAke9QUs=</DigestValue>
+                </ns2:DigestAlgAndValue>
+            </ns2:ValidationObjectRepresentation>
+            <ns2:POE>
+                <ns2:POETime>2022-08-29T13:24:45Z</ns2:POETime>
+                <ns2:TypeOfProof>urn:etsi:019102:poetype:validation</ns2:TypeOfProof>
+            </ns2:POE>
+            <ns2:ValidationReport>
+                <ns2:ValidationConstraintsEvaluationReport>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:formatChecking</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:disabled</ns2:Status>
+                        </ns2:ConstraintStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:identificationOfTheSigningCertificate</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                        </ns2:ConstraintStatus>
+                        <ns2:ValidationStatus>
+                            <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                        </ns2:ValidationStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:validationContextInitialization</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:disabled</ns2:Status>
+                        </ns2:ConstraintStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:cryptographicVerification</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                        </ns2:ConstraintStatus>
+                        <ns2:ValidationStatus>
+                            <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                        </ns2:ValidationStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:signatureAcceptanceValidation</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                        </ns2:ConstraintStatus>
+                        <ns2:ValidationStatus>
+                            <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                        </ns2:ValidationStatus>
+                    </ns2:ValidationConstraint>
+                    <ns2:ValidationConstraint>
+                        <ns2:ValidationConstraintIdentifier>urn:cef:dss:bbb:x509CertificateValidation</ns2:ValidationConstraintIdentifier>
+                        <ns2:ConstraintStatus>
+                            <ns2:Status>urn:etsi:019102:constraintStatus:applied</ns2:Status>
+                        </ns2:ConstraintStatus>
+                        <ns2:ValidationStatus>
+                            <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                        </ns2:ValidationStatus>
+                    </ns2:ValidationConstraint>
+                </ns2:ValidationConstraintsEvaluationReport>
+                <ns2:SignerInformation>
+                    <ns2:SignerCertificate VOReference="C-8EA95C9511F084481CBDC1CF11103BD115F960E1B15296DE05C3E09BC712AE23"/>
+                    <ns2:Signer>OCSP Certigna Entity CA</ns2:Signer>
+                </ns2:SignerInformation>
+                <ns2:SignatureValidationStatus>
+                    <ns2:MainIndication>urn:etsi:019102:mainindication:passed</ns2:MainIndication>
+                    <ns2:AssociatedValidationReportData>
+                        <ns2:TrustAnchor VOReference="C-EBBF4DC600C17DA04381DEFDCFC119C3F34EFB4A04D0860910B813C7792D7585"/>
+                        <ns2:CertificateChain>
+                            <ns2:SigningCertificate VOReference="C-8EA95C9511F084481CBDC1CF11103BD115F960E1B15296DE05C3E09BC712AE23"/>
+                            <ns2:TrustAnchor VOReference="C-EBBF4DC600C17DA04381DEFDCFC119C3F34EFB4A04D0860910B813C7792D7585"/>
+                        </ns2:CertificateChain>
+                        <ns2:CryptoInformation>
+                            <ns2:ValidationObjectId VOReference="R-CAA59558FED06422BB7C5D0973BD8675138780B3D2BAC68BAC29C20247BD414B"/>
+                            <ns2:Algorithm>http://www.w3.org/2001/04/xmldsig-more#rsa-sha256</ns2:Algorithm>
+                            <ns2:SecureAlgorithm>true</ns2:SecureAlgorithm>
+                            <ns2:NotAfter>2022-12-31T23:00:00Z</ns2:NotAfter>
+                        </ns2:CryptoInformation>
+                    </ns2:AssociatedValidationReportData>
+                </ns2:SignatureValidationStatus>
+            </ns2:ValidationReport>
+        </ns2:ValidationObject>
+        <ns2:ValidationObject id="D-275B4E1DC3669EF36D99FEBEF58C080B8BF41B261BE5E673DA85EF391BC95029">
+            <ns2:ObjectType>urn:etsi:019102:validationObject:signedData</ns2:ObjectType>
+            <ns2:ValidationObjectRepresentation>
+                <ns2:DigestAlgAndValue>
+                    <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                    <DigestValue>3ktNNVs6D01VZfXCb0bML22pbZua1Gi1q1iDriG7Zps=</DigestValue>
+                </ns2:DigestAlgAndValue>
+            </ns2:ValidationObjectRepresentation>
+            <ns2:POE>
+                <ns2:POETime>2022-08-09T10:07:39Z</ns2:POETime>
+                <ns2:TypeOfProof>urn:etsi:019102:poetype:validation</ns2:TypeOfProof>
+                <ns2:POEObject VOReference="T-E73A3CEFF1CDAFB4DA693071FAB74D07A91E85518D28D531D22ED1B6C65B087F"/>
+            </ns2:POE>
+        </ns2:ValidationObject>
+    </ns2:SignatureValidationObjects>
+</ns2:ValidationReport>

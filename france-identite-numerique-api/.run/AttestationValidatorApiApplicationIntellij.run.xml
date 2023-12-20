@@ -1,0 +1,38 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="AttestationValidatorApiApplicationIntellij" type="Application" factoryName="Application">
+    <envs>
+      <env name="ROOT_LEVEL" value="INFO" />
+      <env name="DSS_TRUSTSTORE_TYPE" value="JKS" />
+      <env name="DSS_TRUSTSTORE_FILE" value="TLTrustStore.jks" />
+      <env name="DSS_TRUSTSTORE_PASSWORD" value="changeit" />
+      <env name="DSS_TL_URL" value="https://www.ssi.gouv.fr/uploads/tl-fr.xml" />
+      <env name="DSS_TL_PROXY_ENABLE" value="false" />
+      <env name="DSS_TL_PROXY_HOST" value="http://193.56.47.8" />
+      <env name="DSS_TL_PROXY_PORT" value="8080" />
+      <env name="DSS_DL_CONNECTION_TIMEOUT" value="5000000" />
+      <env name="DSS_DL_CONNECTION_REQ_TIMEOUT" value="5000000" />
+      <env name="DSS_DL_REDIRECT_ENABLED" value="true" />
+      <env name="DSS_CRON_TL_LOADER_ENABLE" value="true" />
+      <env name="DSS_CRON_TL_LOADER_INIT_DELAY" value="0" />
+      <env name="DSS_CRON_TL_LOADER_DELAY" value="3600000" />
+      <env name="DSS_CACHE_TL_EXPIRATION_TIME_MIN" value="1200" />
+      <env name="DSS_CACHE_OCSP_EXPIRATION_TIME_MIN" value="1200" />
+      <env name="DSS_CACHE_CRL_EXPIRATION_TIME_MIN" value="1200" />
+      <env name="DSS_CACHE_DATASOURCE_HIKARI_CONNECTION_TIMEOUT" value="20000" />
+      <env name="DSS_CACHE_DATASOURCE_HIKARI_MAX_POOL_SIZE" value="20" />
+      <env name="SGIN_SIGNATURE_VERIFY_HASH" value="false" />
+      <env name="SGIN_SIGNATURE_POLICY_ID" value="1.2.250.1.152.202.1.1.1" />
+      <env name="SGIN_SIGNATURE_PATTERN_ORG_UNIT" value="0002110014016" />
+      <env name="SGIN_SIGNATURE_PATTERN_ORG_IDENTIFIER" value="NTRFR-110014016" />
+      <env name="SGIN_FILE_MAX_SIZE_KB" value="500" />
+      <env name="SGIN_GET_REPORTS" value="false" />
+      <env name="DSS_DL_SSL_PROTOCOL" value="TLSv1.3" />
+      <env name="DSS_EXTRA_CA_CERTS" value="certificates/qualif_ac_root_minint_2018.crt,certificates/qualif_server_1E_2018.crt" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="fr.minint.sgin.attestationvalidatorapi.AttestationValidatorApiApplication" />
+    <module name="france-identite-numerique-api" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
