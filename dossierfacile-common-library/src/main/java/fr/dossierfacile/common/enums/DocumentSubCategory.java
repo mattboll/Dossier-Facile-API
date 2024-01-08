@@ -16,6 +16,7 @@ public enum DocumentSubCategory {
     DRIVERS_LICENSE("document_sub_category.DRIVERS_LICENSE"),
     FRANCE_IDENTITE("document_sub_category.FRANCE_IDENTITE"),
     OTHER_IDENTIFICATION("document_sub_category.OTHER_IDENTIFICATION"),
+    CERTIFICATE_VISA("document_sub_category.CERTIFICATE_VISA"),
 
     // Residency
     TENANT("document_sub_category.TENANT"),
