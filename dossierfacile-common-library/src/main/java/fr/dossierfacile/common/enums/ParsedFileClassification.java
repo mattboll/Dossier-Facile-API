@@ -3,6 +3,7 @@ package fr.dossierfacile.common.enums;
 import fr.dossierfacile.common.entity.FINApiResult;
 import fr.dossierfacile.common.entity.ocr.GuaranteeProviderFile;
 import fr.dossierfacile.common.entity.ocr.ParsedFile;
+import fr.dossierfacile.common.entity.ocr.PublicPayslipFile;
 import fr.dossierfacile.common.entity.ocr.TaxIncomeLeaf;
 import fr.dossierfacile.common.entity.ocr.TaxIncomeMainFile;
 import lombok.AllArgsConstructor;

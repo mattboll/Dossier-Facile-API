@@ -13,7 +13,7 @@ import lombok.ToString;
 @Builder
 @ToString
 @NoArgsConstructor
-//@AllArgsConstructor
+@AllArgsConstructor
 public class FINApiResult implements ParsedFile {
     @Builder.Default
     ParsedFileClassification classification = ParsedFileClassification.FRANCE_IDENTITE_NUMERIQUE;
