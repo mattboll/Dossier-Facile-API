@@ -21,31 +21,37 @@ import java.util.Optional;
 @AllArgsConstructor
 public class AnalyzeFile {
     private final BarCodeFileProcessor barCodeFileProcessor;
-    private final OcrParserFileProcessor ocrParserFileProcessor;
+    private final FileParserProcessor fileParserProcessor;
+//    private final OcrParserFileProcessor ocrParserFileProcessor;
     private final FINFileProcessor finFileProcessor;
     private final FileRepository fileRepository;
 
     public void processFile(Long fileId) {
-        AnalysisContext context = new AnalysisContext();
+        Optional.ofNullable(fileRepository.findById(fileId).orElse(null))
+                .filter(Objects::nonNull)
+                .map(barCodeFileProcessor::process)
+                .map(fileParserProcessor::process);
 
-        Optional.of(context)
-                .map(ctx -> {
-                    ctx.setDfFile(fileRepository.findById(fileId).orElse(null));
-                    return ctx;
-                })
-                .filter(ctx -> QrCodeFileAnalysisCriteria.shouldBeAnalyzed(ctx.getDfFile()))
-                .map(barCodeFileProcessor::process);
+//        AnalysisContext context = new AnalysisContext();
+//
+//        Optional.of(context)
+//                .map(ctx -> {
+//                    ctx.setDfFile(fileRepository.findById(fileId).orElse(null));
+//                    return ctx;
+//                })
+//                .filter(ctx -> QrCodeFileAnalysisCriteria.shouldBeAnalyzed(ctx.getDfFile()))
+//                .map(barCodeFileProcessor::process);
+//
+//        Optional.of(context)
+//                .filter(ctx -> FileParsingEligibilityCriteria.shouldBeParse(ctx.getDfFile()))
+//                .map(loadFileProcessor::process)
+//                .map(ocrParserFileProcessor::process)
+//                .map(loadFileProcessor::cleanContext);
 
-        Optional.of(context)
-                .filter(ctx -> FileParsingEligibilityCriteria.shouldBeParse(ctx.getDfFile()))
-                .map(loadFileProcessor::process)
-                .map(ocrParserFileProcessor::process)
-                .map(loadFileProcessor::cleanContext);
-
-        Optional.of(context)
-                .filter(ctx -> FINFileAnalysisCriteria.shouldBeAnalyzed(ctx.getDfFile()))
-                .map(loadFileProcessor::process)
-                .map(finFileProcessor::process)
-                .map(loadFileProcessor::cleanContext);
+//        Optional.of(context)
+//                .filter(ctx -> FINFileAnalysisCriteria.shouldBeAnalyzed(ctx.getDfFile()))
+//                .map(loadFileProcessor::process)
+//                .map(finFileProcessor::process)
+//                .map(loadFileProcessor::cleanContext);
     }
 }

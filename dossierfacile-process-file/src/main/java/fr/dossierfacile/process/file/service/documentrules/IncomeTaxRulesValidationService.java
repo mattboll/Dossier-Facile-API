@@ -22,8 +22,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import static fr.dossierfacile.process.file.util.NameUtil.normalizeName;
-
 @Service
 @RequiredArgsConstructor
 @Slf4j
