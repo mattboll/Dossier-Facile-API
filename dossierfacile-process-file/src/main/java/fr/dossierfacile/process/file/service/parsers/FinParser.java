@@ -3,7 +3,6 @@ package fr.dossierfacile.process.file.service.parsers;
 
 import fr.dossierfacile.common.entity.ocr.TaxIncomeMainFile;
 import fr.dossierfacile.common.utils.FileUtility;
-import fr.dossierfacile.process.file.service.ocr.TaxIncomeLeafParser;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.sourceforge.tess4j.ITessAPI;
@@ -82,7 +81,7 @@ public class FinParser {
                 String zoneTitle = tesseract.doOCR(image, TaxIncomeZones.scale(zones.zoneTitle, scale));
                 Matcher matcher = incomeYearPattern.matcher(zoneTitle);
                 if (matcher.find()) {
-                    result.setAnneeDesRevenus(matcher.group(1));
+//                    result.setAnneeDesRevenus(matcher.group(1));
                 } else {
                     log.warn("Income year not found");
                     continue;
@@ -119,7 +118,7 @@ public class FinParser {
                 }
                 Matcher incomeAmountMatcher = incomeAmountPattern.matcher(zoneRevenuPart);
                 if (incomeAmountMatcher.find()) {
-                    result.setRevenuFiscalDeReference(incomeAmountMatcher.group(1));
+//                    result.setRevenuFiscalDeReference(incomeAmountMatcher.group(1));
                     break;
                 } else {
                     log.warn("\"Revenu fiscal de référence\" not found" + zoneRevenuPart);

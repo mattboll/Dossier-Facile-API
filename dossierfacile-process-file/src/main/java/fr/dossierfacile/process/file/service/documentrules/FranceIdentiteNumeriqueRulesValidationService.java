@@ -54,167 +54,178 @@ public class FranceIdentiteNumeriqueRulesValidationService implements RulesValid
 //                .referenceAvis(dataWithLabel.get(TwoDDocDataType.ID_44.getLabel())).build();
 //    }
 
+//    @Override
+//    @Transactional
+//    public DocumentAnalysisReport process(Document document) {
+//        DocumentAnalysisReport report = DocumentAnalysisReport.builder().document(document).build();
+//        List<DocumentBrokenRule> brokenRules = Optional.ofNullable(report.getBrokenRules())
+//                .orElseGet(() -> {
+//                    report.setBrokenRules(new LinkedList<>());
+//                    return report.getBrokenRules();
+//                });
+//
+//        // Parse Rule
+//        for (File dfFile : document.getFiles()) {
+//            ParsedFileAnalysis analysis = dfFile.getParsedFileAnalysis();
+//            if (analysis == null || analysis.getAnalysisStatus() == ParsedFileAnalysisStatus.FAILED) {
+//                break;
+//            }
+//            if (analysis.getClassification() == ParsedFileClassification.TAX_INCOME) {
+//                TaxIncomeMainFile parsedDocument = (TaxIncomeMainFile) analysis.getParsedFile();
+//
+//                if (parsedDocument == null
+//                        || parsedDocument.getAnneeDesRevenus() == null
+//                        || parsedDocument.getDeclarant1Nom() == null
+//                        || parsedDocument.getRevenuFiscalDeReference() == null) {
+//                    brokenRules.add(DocumentBrokenRule.builder()
+//                            .rule(DocumentRule.R_TAX_PARSE)
+//                            .message(DocumentRule.R_TAX_PARSE.getDefaultMessage())
+//                            .build());
+//                }
+//            }
+//        }
+//
+//        // Fake rule
+//        for (File dfFile : document.getFiles()) {
+//            ParsedFileAnalysis analysis = dfFile.getParsedFileAnalysis();
+//            if (analysis == null || analysis.getAnalysisStatus() == ParsedFileAnalysisStatus.FAILED) {
+//                break;
+//            }
+//            if (analysis.getClassification() == ParsedFileClassification.TAX_INCOME) {
+//                TaxIncomeMainFile qrDocument = fromQR(dfFile.getFileAnalysis());
+//                TaxIncomeMainFile parsedDocument = (TaxIncomeMainFile) analysis.getParsedFile();
+//
+//                if (parsedDocument != null
+//                        && parsedDocument.getAnneeDesRevenus() != null
+//                        && parsedDocument.getDeclarant1Nom() != null
+//                        && parsedDocument.getRevenuFiscalDeReference() != null
+//                        && (!qrDocument.getAnneeDesRevenus().equalsIgnoreCase(parsedDocument.getAnneeDesRevenus())
+//                        || !qrDocument.getDeclarant1Nom().equalsIgnoreCase(parsedDocument.getDeclarant1Nom())
+//                        || !qrDocument.getRevenuFiscalDeReference().equalsIgnoreCase(parsedDocument.getRevenuFiscalDeReference().replaceAll("\\s", ""))
+//                )) {
+//                    log.error("Le 2DDoc code ne correspond pas au contenu du document tenantId:" + document.getTenant().getId());
+//                    brokenRules.add(DocumentBrokenRule.builder()
+//                            .rule(DocumentRule.R_TAX_FAKE)
+//                            .message(DocumentRule.R_TAX_FAKE.getDefaultMessage())
+//                            .build());
+//                }
+//            }
+//        }
+//
+//        // Provide N-1 tax income / not more N-3
+//        List<Integer> providedYears = new ArrayList<>(2);
+//        for (File dfFile : document.getFiles()) {
+//            if (dfFile.getFileAnalysis() != null) {
+//                TaxIncomeMainFile qrDocument = fromQR(dfFile.getFileAnalysis());
+//                if (qrDocument.getAnneeDesRevenus() != null)
+//                    providedYears.add(Integer.parseInt(qrDocument.getAnneeDesRevenus()));
+//            }
+//        }
+//        Integer maxYear = providedYears.stream().max(Integer::compare).orElse(null);
+//        // try to check some rules
+//        LocalDate now = LocalDate.now();
+//        if (now.isBefore(LocalDate.of(now.getYear(), 9, 15))) {
+//            if (maxYear != (now.getYear() - 1) && maxYear != (now.getYear() - 2)) {
+//                log.error("Tax income is deprecated - tenantId:" + document.getTenant().getId());
+//                brokenRules.add(DocumentBrokenRule.builder()
+//                        .rule(DocumentRule.R_TAX_N1)
+//                        .message("L'avis d'impots sur les revenus " + maxYear
+//                                + ", vous devez fournir un avis d'impots sur les revenus " + (now.getYear() - 1)
+//                                + " ou " + (now.getYear() - 2))
+//                        .build());
+//            }
+//        } else if (maxYear != (now.getYear() - 1)) {
+//            log.error("Tax income is deprecated - tenantId:" + document.getTenant().getId());
+//            brokenRules.add(DocumentBrokenRule.builder()
+//                    .rule(DocumentRule.R_TAX_N1)
+//                    .message("L'avis d'impots sur les revenus " + maxYear
+//                            + " n'est pas accepté, vous devez fournir un avis d'impots sur les revenus " + (now.getYear() - 1))
+//                    .build());
+//        }
+//
+//        // N-3 check
+//        Integer minYear = providedYears.stream().min(Integer::compare).orElse(null);
+//        int authorisedYear = now.minusMonths(9).minusDays(15).getYear();
+//        if (minYear < (authorisedYear - 2)) {
+//            log.error("Tax income is deprecated - tenantId:" + document.getTenant().getId());
+//            brokenRules.add(DocumentBrokenRule.builder()
+//                    .rule(DocumentRule.R_TAX_N3)
+//                    .message(DocumentRule.R_TAX_N3.getDefaultMessage())
+//                    .build());
+//        }
+//
+//        // Firstname LastName
+//        Person documentOwner = Optional.ofNullable((Person) document.getTenant()).orElseGet(() -> document.getGuarantor());
+//        String firstName = documentOwner.getFirstName();
+//        String lastName = document.getName();
+//        for (File dfFile : document.getFiles()) {
+//            BarCodeFileAnalysis analysis = dfFile.getFileAnalysis();
+//            if (analysis.getDocumentType() == BarCodeDocumentType.TAX_ASSESSMENT) {
+//                TaxIncomeMainFile qrDocument = fromQR(dfFile.getFileAnalysis());
+//
+//                if (!(normalizeName(qrDocument.getDeclarant1Nom()).contains(normalizeName(firstName))
+//                        && normalizeName(qrDocument.getDeclarant1Nom()).contains(normalizeName(lastName))
+//                        || (qrDocument.getDeclarant2Nom() != null &&
+//                        normalizeName(qrDocument.getDeclarant2Nom()).contains(normalizeName(firstName))
+//                        && normalizeName(qrDocument.getDeclarant2Nom()).contains(normalizeName(lastName))
+//                ))) {
+//                    log.error("Le nom/prenom ne correpond pas à l'uilitsation tenantId:" + document.getTenant().getId() + " firstname: " + firstName);
+//                    brokenRules.add(DocumentBrokenRule.builder()
+//                            .rule(DocumentRule.R_TAX_NAMES)
+//                            .message(DocumentRule.R_TAX_NAMES.getDefaultMessage())
+//                            .build());
+//                }
+//            }
+//        }
+//
+//        // missing pages - currently only check when page are linked in mainFile
+//        // TODO later - rebuild the entire document from external taxincome leaf
+//        for (File dfFile : document.getFiles()) {
+//            ParsedFileAnalysis analysis = dfFile.getParsedFileAnalysis();
+//            if (analysis == null || analysis.getAnalysisStatus() == ParsedFileAnalysisStatus.FAILED) {
+//                break;
+//            }
+//            if (analysis.getClassification() == ParsedFileClassification.TAX_INCOME) {
+//                TaxIncomeMainFile parsedDocument = (TaxIncomeMainFile) analysis.getParsedFile();
+//                if (CollectionUtils.isEmpty(parsedDocument.getTaxIncomeLeaves())) {
+//                    log.error("Income tax has not incometaxleaf:" + document.getTenant().getId());
+//                    brokenRules.add(DocumentBrokenRule.builder()
+//                            .rule(DocumentRule.R_TAX_LEAF)
+//                            .message(DocumentRule.R_TAX_LEAF.getDefaultMessage())
+//                            .build());
+//                    break;
+//                }
+//                TaxIncomeLeaf leaf = parsedDocument.getTaxIncomeLeaves().get(0);
+//                if (leaf.getPageCount() != null && leaf.getPageCount() != parsedDocument.getTaxIncomeLeaves().size()) {
+//                    log.error("Income tax has not ALL incometaxleaf:" + document.getTenant().getId());
+//                    brokenRules.add(DocumentBrokenRule.builder()
+//                            .rule(DocumentRule.R_TAX_ALL_LEAF)
+//                            .message(DocumentRule.R_TAX_ALL_LEAF.getDefaultMessage())
+//                            .build());
+//                }
+//
+//            }
+//        }
+//
+//        if (brokenRules.isEmpty()) {
+//            report.setAnalysisStatus(DocumentAnalysisStatus.CHECKED);
+//        } else if (brokenRules.stream().anyMatch(r -> r.getRule().getLevel() == DocumentRule.Level.CRITICAL)) {
+//            report.setAnalysisStatus(DocumentAnalysisStatus.DENIED);
+//        } else {
+//            report.setAnalysisStatus(DocumentAnalysisStatus.UNDEFINED);
+//        }
+//
+//        return report;
+//    }
+
+
     @Override
-    @Transactional
-    public DocumentAnalysisReport process(Document document) {
-        DocumentAnalysisReport report = DocumentAnalysisReport.builder().document(document).build();
-        List<DocumentBrokenRule> brokenRules = Optional.ofNullable(report.getBrokenRules())
-                .orElseGet(() -> {
-                    report.setBrokenRules(new LinkedList<>());
-                    return report.getBrokenRules();
-                });
+    public boolean shouldBeApplied(Document document) {
+        return false;
+    }
 
-        // Parse Rule
-        for (File dfFile : document.getFiles()) {
-            ParsedFileAnalysis analysis = dfFile.getParsedFileAnalysis();
-            if (analysis == null || analysis.getAnalysisStatus() == ParsedFileAnalysisStatus.FAILED) {
-                break;
-            }
-            if (analysis.getClassification() == ParsedFileClassification.TAX_INCOME) {
-                TaxIncomeMainFile parsedDocument = (TaxIncomeMainFile) analysis.getParsedFile();
-
-                if (parsedDocument == null
-                        || parsedDocument.getAnneeDesRevenus() == null
-                        || parsedDocument.getDeclarant1Nom() == null
-                        || parsedDocument.getRevenuFiscalDeReference() == null) {
-                    brokenRules.add(DocumentBrokenRule.builder()
-                            .rule(DocumentRule.R_TAX_PARSE)
-                            .message(DocumentRule.R_TAX_PARSE.getDefaultMessage())
-                            .build());
-                }
-            }
-        }
-
-        // Fake rule
-        for (File dfFile : document.getFiles()) {
-            ParsedFileAnalysis analysis = dfFile.getParsedFileAnalysis();
-            if (analysis == null || analysis.getAnalysisStatus() == ParsedFileAnalysisStatus.FAILED) {
-                break;
-            }
-            if (analysis.getClassification() == ParsedFileClassification.TAX_INCOME) {
-                TaxIncomeMainFile qrDocument = fromQR(dfFile.getFileAnalysis());
-                TaxIncomeMainFile parsedDocument = (TaxIncomeMainFile) analysis.getParsedFile();
-
-                if (parsedDocument != null
-                        && parsedDocument.getAnneeDesRevenus() != null
-                        && parsedDocument.getDeclarant1Nom() != null
-                        && parsedDocument.getRevenuFiscalDeReference() != null
-                        && (!qrDocument.getAnneeDesRevenus().equalsIgnoreCase(parsedDocument.getAnneeDesRevenus())
-                        || !qrDocument.getDeclarant1Nom().equalsIgnoreCase(parsedDocument.getDeclarant1Nom())
-                        || !qrDocument.getRevenuFiscalDeReference().equalsIgnoreCase(parsedDocument.getRevenuFiscalDeReference().replaceAll("\\s", ""))
-                )) {
-                    log.error("Le 2DDoc code ne correspond pas au contenu du document tenantId:" + document.getTenant().getId());
-                    brokenRules.add(DocumentBrokenRule.builder()
-                            .rule(DocumentRule.R_TAX_FAKE)
-                            .message(DocumentRule.R_TAX_FAKE.getDefaultMessage())
-                            .build());
-                }
-            }
-        }
-
-        // Provide N-1 tax income / not more N-3
-        List<Integer> providedYears = new ArrayList<>(2);
-        for (File dfFile : document.getFiles()) {
-            if (dfFile.getFileAnalysis() != null) {
-                TaxIncomeMainFile qrDocument = fromQR(dfFile.getFileAnalysis());
-                if (qrDocument.getAnneeDesRevenus() != null)
-                    providedYears.add(Integer.parseInt(qrDocument.getAnneeDesRevenus()));
-            }
-        }
-        Integer maxYear = providedYears.stream().max(Integer::compare).orElse(null);
-        // try to check some rules
-        LocalDate now = LocalDate.now();
-        if (now.isBefore(LocalDate.of(now.getYear(), 9, 15))) {
-            if (maxYear != (now.getYear() - 1) && maxYear != (now.getYear() - 2)) {
-                log.error("Tax income is deprecated - tenantId:" + document.getTenant().getId());
-                brokenRules.add(DocumentBrokenRule.builder()
-                        .rule(DocumentRule.R_TAX_N1)
-                        .message("L'avis d'impots sur les revenus " + maxYear
-                                + ", vous devez fournir un avis d'impots sur les revenus " + (now.getYear() - 1)
-                                + " ou " + (now.getYear() - 2))
-                        .build());
-            }
-        } else if (maxYear != (now.getYear() - 1)) {
-            log.error("Tax income is deprecated - tenantId:" + document.getTenant().getId());
-            brokenRules.add(DocumentBrokenRule.builder()
-                    .rule(DocumentRule.R_TAX_N1)
-                    .message("L'avis d'impots sur les revenus " + maxYear
-                            + " n'est pas accepté, vous devez fournir un avis d'impots sur les revenus " + (now.getYear() - 1))
-                    .build());
-        }
-
-        // N-3 check
-        Integer minYear = providedYears.stream().min(Integer::compare).orElse(null);
-        int authorisedYear = now.minusMonths(9).minusDays(15).getYear();
-        if (minYear < (authorisedYear - 2)) {
-            log.error("Tax income is deprecated - tenantId:" + document.getTenant().getId());
-            brokenRules.add(DocumentBrokenRule.builder()
-                    .rule(DocumentRule.R_TAX_N3)
-                    .message(DocumentRule.R_TAX_N3.getDefaultMessage())
-                    .build());
-        }
-
-        // Firstname LastName
-        Person documentOwner = Optional.ofNullable((Person) document.getTenant()).orElseGet(() -> document.getGuarantor());
-        String firstName = documentOwner.getFirstName();
-        String lastName = document.getName();
-        for (File dfFile : document.getFiles()) {
-            BarCodeFileAnalysis analysis = dfFile.getFileAnalysis();
-            if (analysis.getDocumentType() == BarCodeDocumentType.TAX_ASSESSMENT) {
-                TaxIncomeMainFile qrDocument = fromQR(dfFile.getFileAnalysis());
-
-                if (!(normalizeName(qrDocument.getDeclarant1Nom()).contains(normalizeName(firstName))
-                        && normalizeName(qrDocument.getDeclarant1Nom()).contains(normalizeName(lastName))
-                        || (qrDocument.getDeclarant2Nom() != null &&
-                        normalizeName(qrDocument.getDeclarant2Nom()).contains(normalizeName(firstName))
-                        && normalizeName(qrDocument.getDeclarant2Nom()).contains(normalizeName(lastName))
-                ))) {
-                    log.error("Le nom/prenom ne correpond pas à l'uilitsation tenantId:" + document.getTenant().getId() + " firstname: " + firstName);
-                    brokenRules.add(DocumentBrokenRule.builder()
-                            .rule(DocumentRule.R_TAX_NAMES)
-                            .message(DocumentRule.R_TAX_NAMES.getDefaultMessage())
-                            .build());
-                }
-            }
-        }
-
-        // missing pages - currently only check when page are linked in mainFile
-        // TODO later - rebuild the entire document from external taxincome leaf
-        for (File dfFile : document.getFiles()) {
-            ParsedFileAnalysis analysis = dfFile.getParsedFileAnalysis();
-            if (analysis == null || analysis.getAnalysisStatus() == ParsedFileAnalysisStatus.FAILED) {
-                break;
-            }
-            if (analysis.getClassification() == ParsedFileClassification.TAX_INCOME) {
-                TaxIncomeMainFile parsedDocument = (TaxIncomeMainFile) analysis.getParsedFile();
-                if (CollectionUtils.isEmpty(parsedDocument.getTaxIncomeLeaves())) {
-                    log.error("Income tax has not incometaxleaf:" + document.getTenant().getId());
-                    brokenRules.add(DocumentBrokenRule.builder()
-                            .rule(DocumentRule.R_TAX_LEAF)
-                            .message(DocumentRule.R_TAX_LEAF.getDefaultMessage())
-                            .build());
-                    break;
-                }
-                TaxIncomeLeaf leaf = parsedDocument.getTaxIncomeLeaves().get(0);
-                if (leaf.getPageCount() != null && leaf.getPageCount() != parsedDocument.getTaxIncomeLeaves().size()) {
-                    log.error("Income tax has not ALL incometaxleaf:" + document.getTenant().getId());
-                    brokenRules.add(DocumentBrokenRule.builder()
-                            .rule(DocumentRule.R_TAX_ALL_LEAF)
-                            .message(DocumentRule.R_TAX_ALL_LEAF.getDefaultMessage())
-                            .build());
-                }
-
-            }
-        }
-
-        if (brokenRules.isEmpty()) {
-            report.setAnalysisStatus(DocumentAnalysisStatus.CHECKED);
-        } else if (brokenRules.stream().anyMatch(r -> r.getRule().getLevel() == DocumentRule.Level.CRITICAL)) {
-            report.setAnalysisStatus(DocumentAnalysisStatus.DENIED);
-        } else {
-            report.setAnalysisStatus(DocumentAnalysisStatus.UNDEFINED);
-        }
-
-        return report;
+    @Override
+    public DocumentAnalysisReport process(Document document, DocumentAnalysisReport report) {
+        return null;
     }
 }
