@@ -2,6 +2,7 @@ package fr.minint.sgin.attestationvalidatorapi.exception.handler;
 
 import fr.minint.sgin.attestationvalidatorapi.exception.GlobalAbstractException;
 import fr.minint.sgin.attestationvalidatorapi.exception.ResourceNotFoundException;
+import jakarta.validation.ConstraintViolationException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 
-import javax.validation.ConstraintViolationException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
