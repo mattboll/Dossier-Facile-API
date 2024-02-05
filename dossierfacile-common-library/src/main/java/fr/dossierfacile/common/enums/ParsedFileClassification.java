@@ -1,6 +1,6 @@
 package fr.dossierfacile.common.enums;
 
-import fr.dossierfacile.common.entity.FINApiResult;
+import fr.dossierfacile.common.entity.FranceIdentiteApiResult;
 import fr.dossierfacile.common.entity.ocr.GuaranteeProviderFile;
 import fr.dossierfacile.common.entity.ocr.ParsedFile;
 import fr.dossierfacile.common.entity.ocr.PublicPayslipFile;
@@ -17,7 +17,7 @@ public enum ParsedFileClassification {
     GUARANTEE_PROVIDER(GuaranteeProviderFile.class),
     PUBLIC_PAYSLIP(PublicPayslipFile.class),
     RENTAL_RECEIPT(RentalReceiptFile.class),
-    FRANCE_IDENTITE_NUMERIQUE(FINApiResult.class);
+    FRANCE_IDENTITE_NUMERIQUE(FranceIdentiteApiResult.class);
 
     Class<? extends ParsedFile> classificationClass;
 }

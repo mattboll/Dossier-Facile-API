@@ -1,37 +1,10 @@
 package fr.dossierfacile.process.file.service.documentrules;
 
-import fr.dossierfacile.common.entity.BarCodeDocumentType;
-import fr.dossierfacile.common.entity.BarCodeFileAnalysis;
 import fr.dossierfacile.common.entity.Document;
 import fr.dossierfacile.common.entity.DocumentAnalysisReport;
-import fr.dossierfacile.common.entity.DocumentAnalysisStatus;
-import fr.dossierfacile.common.entity.DocumentBrokenRule;
-import fr.dossierfacile.common.entity.DocumentRule;
-import fr.dossierfacile.common.entity.FINApiResult;
-import fr.dossierfacile.common.entity.File;
-import fr.dossierfacile.common.entity.ParsedFileAnalysis;
-import fr.dossierfacile.common.entity.Person;
-import fr.dossierfacile.common.entity.ocr.TaxIncomeLeaf;
-import fr.dossierfacile.common.entity.ocr.TaxIncomeMainFile;
-import fr.dossierfacile.common.enums.ParsedFileAnalysisStatus;
-import fr.dossierfacile.common.enums.ParsedFileClassification;
-import fr.dossierfacile.process.file.barcode.twoddoc.parsing.TwoDDocDataType;
-import fr.dossierfacile.process.file.util.NameUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.CollectionUtils;
-
-import java.text.Normalizer;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-import static fr.dossierfacile.process.file.util.NameUtil.normalizeName;
 
 @Service
 @RequiredArgsConstructor

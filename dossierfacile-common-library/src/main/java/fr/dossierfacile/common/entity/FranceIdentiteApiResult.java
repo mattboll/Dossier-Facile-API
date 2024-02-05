@@ -14,7 +14,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class FINApiResult implements ParsedFile {
+public class FranceIdentiteApiResult implements ParsedFile {
     @Builder.Default
     ParsedFileClassification classification = ParsedFileClassification.FRANCE_IDENTITE_NUMERIQUE;
     ParsedStatus status;
