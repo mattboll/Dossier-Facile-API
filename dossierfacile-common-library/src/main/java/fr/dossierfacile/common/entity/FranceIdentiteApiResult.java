@@ -17,9 +17,12 @@ import lombok.ToString;
 public class FranceIdentiteApiResult implements ParsedFile {
     @Builder.Default
     ParsedFileClassification classification = ParsedFileClassification.FRANCE_IDENTITE_NUMERIQUE;
-    ParsedStatus status;
-    String apiStatus;
-    String lastname;
-    String firstname;
+    ParsedStatus parsedStatus;
+    String status;
+    String familyName;
+    String givenName;
+    String birthDate;
+    String birthPlace;
+    String gender;
     String validityDate;
 }
