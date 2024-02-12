@@ -4,6 +4,7 @@ import fr.dossierfacile.common.entity.FranceIdentiteApiResult;
 import fr.dossierfacile.common.entity.ocr.GuaranteeProviderFile;
 import fr.dossierfacile.common.entity.ocr.ParsedFile;
 import fr.dossierfacile.common.entity.ocr.PublicPayslipFile;
+import fr.dossierfacile.common.entity.ocr.RentalReceiptFile;
 import fr.dossierfacile.common.entity.ocr.TaxIncomeLeaf;
 import fr.dossierfacile.common.entity.ocr.TaxIncomeMainFile;
 import lombok.AllArgsConstructor;
